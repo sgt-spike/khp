@@ -1,7 +1,7 @@
 <?php
 require 'header.php';
 ?>     
-   <main id="main" class="container main">
+   <main id="main" class="container-main main">
       <h1 id="main-heading">Trying to ease some of the financial burden, if even just a little</h1>
       <figure class="main-fig">
       <img id="main-img" src="img/Katie.jpg" alt="Beautiful Katie">

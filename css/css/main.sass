@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Alice')
+@import '_variables'
+@import '_mixins'
+
+/* Site Styling*/
+body
+   margin: 0
+   padding: 0
+
+/* Header Section Styling*/
+header#header
+   @include headerGrid
+   font-family: 'Indie Flower', cursive
+   background: $prime-purple
+   height: 175px
+
+   .hcontainer
+      @include headerGrid
+      grid-column: 1/9
+
+      img#logo
+         max-width: 142px
+         grid-column: 2
+         @include justify-align-self_center
+
+      ul#nav
+         grid-column: 3/9
+         @include justify-align-self_center
+
+         li.nav-item
+            cursor: pointer
+            display: inline-flex
+            @include justify-align-self_center 
+            font-size: 22.5px
+            font-weight: map-get($font-weight, regular)
+            text-transform: capitalize
+            text-align: center
+
+            a
+               text-decoration: none
+               color: $text-white
+               &.active
+                  background: $background_green
+                  text-decoration: underline
+               &.contact
+                  background: $background_green
+                  color: $text_white
+
+   
+
+/* Index page styling*/
+.container-main
+   @include mainGrid
+   font-family: 'Alice', serif
+   color: var(--primePurple)
+   grid-column-gap: 10px
+
+   h1
+      text-shadow: 2px 2px 4px $prime_purple
+   
+   #main-heading
+      grid-row: 1
+      grid-column: 1 / 13
+      justify-self: center
+      align-self: center
+
+   .main-fig
+      grid-row: 2/8
+      grid-column: 3/7
+      margin: 0
+      padding: 0
+
+   .figure
+      text-align: center
+
+   img#main-img
+      max-width: 100%
+      height: auto
+
+   #main-art
+      grid-row: 2 / 8
+      grid-column: 7 / 11
+      margin: 0
+      padding: 0
+
+   #main-art p
+      font-size: 20px
+      line-height: 1.8em
+      margin: inherit
+      padding: inherit
+
+
+   
+
+   
