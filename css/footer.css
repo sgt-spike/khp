@@ -1,0 +1,42 @@
+#footer {
+   display: grid;
+   grid: 250px / repeat(8, 1fr);
+   background: #52055c;
+   color: #fff;
+   border-top: solid #20b62f 5px;
+}
+
+#address {
+   grid-column: 2 / 4;
+   justify-self: start;
+   align-self: end;
+   margin-left: 70px;
+}
+
+#social {
+   grid-column: 4 / 6;
+   justify-self: center;
+   align-self: start;
+   margin-top: 100px;
+}
+
+#social .fab {
+   letter-spacing: 5px;
+   font-size: 48px;
+   color: #fff;
+}
+
+#dev {
+   grid-column: 4 / 6;
+   justify-self: center;
+   align-self: end;
+}
+ #dev a {
+   color: #fff;
+ }
+
+#copy {
+   grid-column: 7;
+   justify-self: start;
+   align-self: end;
+}

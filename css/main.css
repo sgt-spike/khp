@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Alice');
+:root {
+    --primePurple: #52055c;
+    --primeGreen: #20b62f;
+}
+
+.container {
+    display: grid;
+    grid: repeat(7, 175px) / repeat(12, 1fr);
+    font-family: 'Alice', serif;
+    color: var(--primePurple);
+    grid-column-gap: 10px
+}
+
+h1 {
+    text-shadow: 2px 2px 4px #52055c;
+}
+
+#main-heading {
+    grid-row: 1;
+    grid-column: 1 / 13;
+    justify-self: center;
+    align-self: center;
+}
+
+.main-fig {
+    grid-row: 2 / 8;
+    grid-column: 3 / 7;
+    margin: 0;
+    padding: 0;
+}
+
+.figure {
+    text-align: center;
+}
+
+img#main-img {
+    max-width: 100%;
+    height: auto;
+}
+
+#main-art {
+    grid-row: 2 / 8;
+    grid-column: 7 / 11;
+    margin: 0;
+    padding: 0;
+}
+
+#main-art p {
+    font-size: 20px;
+    line-height: 1.8em;
+    margin: inherit;
+    padding: inherit;
+}

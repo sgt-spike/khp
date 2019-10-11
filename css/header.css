@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    display: grid;
+    grid: 175px / repeat(8, 1fr);
+    font-family: 'Indie Flower', cursive;
+    background: #52055c;
+    height: 175px;
+}
+
+.hcontainer {
+    display: grid;
+    grid: 175px / repeat(8, 1fr);
+    grid-column: 1 / 9;
+}
+
+#logo {
+    max-width: 142px;
+    justify-self: center;
+    align-self: center;
+    grid-column: 2;
+}
+
+#nav {
+    grid-column: 3 / 9;
+    justify-self: center;
+    align-self: center;
+}
+
+.divide {
+    color: #20b62f;
+    font-size: 2em;
+    padding: 0 10px;
+}
+
+li.nav-item {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 22.5px;
+    font-weight: 400;
+    text-transform: capitalize;
+    /* padding: 0 10px; */
+    text-align: center;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #d9d8d8;
+}
+
+a.active {
+    color: #20b62f;
+    text-decoration: underline;
+}
+
+.nav-item a.contact {
+    background: #20b62f;
+    color: #d9d8d8;
+}
+
+.nav-item a:hover {
+    color: #20b62f;
+    transition-property: color;
+    transition-duration: 200ms, 200ms;
+    transition-timing-function: ease-in-out, ease-in-out;
+    transition-delay: 0s, 0s;
+}
+
+
+/* .nav-item #sub-div {
+   display: inline-block;
+} */
+
+.nav-item a#contact {
+    border: solid 2px #20b62f;
+    border-radius: 50px;
+    text-align: center;
+    padding: 5px 15px;
+    color: #20b62f
+}
+
+.nav-item a#contact:hover {
+    background: #20b62f;
+    color: #d9d8d8;
+    transition-property: color, background-color;
+    transition-duration: 200ms, 200ms;
+    transition-timing-function: ease-in-out, ease-in-out;
+    transition-delay: 0s, 0s;
+}
+
+
+/* .with-sub {
+    float: left;
+}
+
+.nav-item .nav-sub {
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+
+.nav-item:hover .nav-sub {
+    display: block;
+    background: #fff;
+    width: 225px;
+    color: #20b62f;
+    transition-property: color, background-color;
+    transition-duration: 200ms, 200ms;
+    transition-timing-function: ease-in-out, ease-in-out;
+    transition-delay: 0s, 0s;
+}
+
+.nav-sub .sub-nav-item {
+    text-align: center;
+    font-size: 16px;
+}
+
+.sub-nav-item a {
+    font-size: 16px;
+    color: #20b62f
+}
+
+.sub-nav-item:hover {
+    background: #20b62f;
+    color: #fff;
+    text-decoration: underline;
+} */
