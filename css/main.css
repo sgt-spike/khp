@@ -9,7 +9,7 @@
     grid: repeat(7, 175px) / repeat(12, 1fr);
     font-family: 'Alice', serif;
     color: var(--primePurple);
-    grid-column-gap: 10px
+    grid-column-gap: 10px;
 }
 
 h1 {

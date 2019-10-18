@@ -101,7 +101,7 @@ header#header .hcontainer ul#nav li.nav-item a#contact {
   display: grid;
   grid: repeat(7, 175px)/repeat(12, 1fr);
   font-family: 'Alice', serif;
-  color: var(--primePurple);
+  color: #52055c;
   grid-column-gap: 10px;
 }
 
@@ -131,9 +131,6 @@ header#header .hcontainer ul#nav li.nav-item a#contact {
   grid-column: 3/7;
   margin: 0;
   padding: 0;
-}
-
-.container-main .figure {
   text-align: center;
 }
 

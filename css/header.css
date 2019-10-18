@@ -1,9 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
-body {
-    margin: 0;
-    padding: 0;
-}
-
 #header {
     display: grid;
     grid: 175px / repeat(8, 1fr);
