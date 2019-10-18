@@ -4,7 +4,7 @@
     --primeGreen: #20b62f;
 }
 
-.container {
+.container-main {
     display: grid;
     grid: repeat(7, 175px) / repeat(12, 1fr);
     font-family: 'Alice', serif;
@@ -21,6 +21,7 @@ h1 {
     grid-column: 1 / 13;
     justify-self: center;
     align-self: center;
+    text-align: center;
 }
 
 .main-fig {
@@ -30,12 +31,12 @@ h1 {
     padding: 0;
 }
 
-.figure {
+.main-fig {
     text-align: center;
 }
 
 img#main-img {
-    max-width: 100%;
+    max-width: 75%;
     height: auto;
 }
 
