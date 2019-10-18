@@ -87,6 +87,14 @@ header#header .hcontainer ul#nav li.nav-item a:hover {
           transition-delay: 0s, 0s;
 }
 
+header#header .hcontainer ul#nav li.nav-item a#contact {
+  border: solid 2px #20b62f;
+  border-radius: 50px;
+  text-align: center;
+  padding: 5px 15px;
+  color: #20b62f;
+}
+
 /* Index page styling*/
 .container-main {
   display: -ms-grid;
