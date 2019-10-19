@@ -3,6 +3,8 @@
 @import '_mixins'
 
 /* Site Styling*/
+html
+   font-size: 62.5%
 body
    margin: 0
    padding: 0
@@ -11,7 +13,7 @@ body
 header#header
    @include headerGrid
    font-family: 'Indie Flower', cursive
-   background: $prime-purple
+   background: $khp-purple
    height: 175px
 
    .hcontainer
@@ -31,32 +33,41 @@ header#header
             cursor: pointer
             display: inline-flex
             @include justify-align-self_center 
-            font-size: 22.5px
+            font-size: 2.5rem
             font-weight: map-get($font-weight, regular)
             text-transform: capitalize
             text-align: center
 
             a
                text-decoration: none
-               color: $text-white
+               color: $khp_textwhite
                &.active
-                  background: $background_green
-                  text-decoration: underline
-               &.contact
-                  background: $background_green
-                  color: $text_white
+                  background: $khp_background_green
+                  text-decoration: underline               
                &:hover
-                  color: $accent_green
+                  color: $khp_green
                   transition-property: color
                   transition-duration: 200ms, 200ms
                   transition-timing-function: ease-in-out, ease-in-out
                   transition-delay: 0s, 0s
                &#contact
-                  border: solid 2px #20b62f
+                  border: solid 2px $khp_green
                   border-radius: 50px
                   text-align: center
                   padding: 5px 15px
-                  color: #20b62f                  
+                  color: $khp_green
+                  &:hover
+                     background: $khp_background_green
+                     color: $khp_textwhite
+                     transition-property: color, background-color
+                     transition-duration: 200ms, 200ms
+                     transition-timing-function: ease-in-out, ease-in-out
+                     transition-delay: 0s, 0s
+            
+            span.divide
+               color: $khp_green
+               font-size: 3.5rem
+               padding: 0 10px
 
    
 
@@ -64,17 +75,17 @@ header#header
 .container-main
    @include mainGrid
    font-family: 'Alice', serif
-   color: $prime_purple
+   color: $khp_purple
    grid-column-gap: 10px
 
    h1
-      text-shadow: 2px 2px 4px $prime_purple
+      text-shadow: 2px 2px 4px $khp_purple
+      font-size: 3rem
    
    #main-heading
       grid-row: 1
       grid-column: 1 / 13
-      justify-self: center
-      align-self: center
+      @include justify-align-self_center
 
    .main-fig
       grid-row: 2/8
@@ -94,11 +105,46 @@ header#header
       padding: 0
 
    #main-art p
-      font-size: 20px
+      font-size: 2.5rem
       line-height: 1.8em
       margin: inherit
       padding: inherit
 
+/* Styling for Footer */
+footer
+   &#footer
+      display: grid
+      grid: 250px / repeat(8, 1fr)
+      background: #52055c
+      color: #fff
+      border-top: solid #20b62f 5px
+   div
+      &#address
+         grid-column: 2 / 4
+         @include justify-align-self_start-end
+         margin-left: 70px
+   div
+      &#social
+         grid-column: 4 / 6
+         @include justify-align-self_center-start
+         margin-top: 100px
+
+         .fab
+            letter-spacing: 5px
+            font-size: 48px
+            color: $khp_purewhite
+
+   div
+      &#dev
+         grid-column: 4 / 6
+         @include justify-align-self_center-end
+         a
+            color: $khp_purewhite
+
+   div
+      &#copy
+         grid-column: 7
+         @include justify-align-self_start-end
 
    
 

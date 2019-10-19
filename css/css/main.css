@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Alice");
 /* Site Styling*/
+html {
+  font-size: 62.5%;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -54,7 +58,7 @@ header#header .hcontainer ul#nav li.nav-item {
   justify-self: center;
   -ms-flex-item-align: center;
       align-self: center;
-  font-size: 22.5px;
+  font-size: 2.5rem;
   font-weight: 400;
   text-transform: capitalize;
   text-align: center;
@@ -68,11 +72,6 @@ header#header .hcontainer ul#nav li.nav-item a {
 header#header .hcontainer ul#nav li.nav-item a.active {
   background: #20b62f;
   text-decoration: underline;
-}
-
-header#header .hcontainer ul#nav li.nav-item a.contact {
-  background: #20b62f;
-  color: #d9d8d8;
 }
 
 header#header .hcontainer ul#nav li.nav-item a:hover {
@@ -95,6 +94,25 @@ header#header .hcontainer ul#nav li.nav-item a#contact {
   color: #20b62f;
 }
 
+header#header .hcontainer ul#nav li.nav-item a#contact:hover {
+  background: #20b62f;
+  color: #d9d8d8;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+  -webkit-transition-duration: 200ms, 200ms;
+          transition-duration: 200ms, 200ms;
+  -webkit-transition-timing-function: ease-in-out, ease-in-out;
+          transition-timing-function: ease-in-out, ease-in-out;
+  -webkit-transition-delay: 0s, 0s;
+          transition-delay: 0s, 0s;
+}
+
+header#header .hcontainer ul#nav li.nav-item span.divide {
+  color: #20b62f;
+  font-size: 3.5rem;
+  padding: 0 10px;
+}
+
 /* Index page styling*/
 .container-main {
   display: -ms-grid;
@@ -107,6 +125,7 @@ header#header .hcontainer ul#nav li.nav-item a#contact {
 
 .container-main h1 {
   text-shadow: 2px 2px 4px #52055c;
+  font-size: 3rem;
 }
 
 .container-main #main-heading {
@@ -151,9 +170,74 @@ header#header .hcontainer ul#nav li.nav-item a#contact {
 }
 
 .container-main #main-art p {
-  font-size: 20px;
+  font-size: 2.5rem;
   line-height: 1.8em;
   margin: inherit;
   padding: inherit;
+}
+
+/* Styling for Footer */
+footer#footer {
+  display: -ms-grid;
+  display: grid;
+  grid: 250px/repeat(8, 1fr);
+  background: #52055c;
+  color: #fff;
+  border-top: solid #20b62f 5px;
+}
+
+footer div#address {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-column: 2 / 4;
+  -ms-grid-column-align: start;
+      justify-self: start;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  margin-left: 70px;
+}
+
+footer div#social {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 2;
+  grid-column: 4 / 6;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  margin-top: 100px;
+}
+
+footer div#social .fab {
+  letter-spacing: 5px;
+  font-size: 48px;
+  color: #ffffff;
+}
+
+footer div#dev {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 2;
+  grid-column: 4 / 6;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+footer div#dev a {
+  color: #ffffff;
+}
+
+footer div#copy {
+  -ms-grid-column: 7;
+  grid-column: 7;
+  -ms-grid-column-align: start;
+      justify-self: start;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
 }
 /*# sourceMappingURL=main.css.map */
