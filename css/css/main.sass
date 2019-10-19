@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Alice')
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower')
 @import '_variables'
 @import '_mixins'
 
 /* Site Styling*/
 html
    font-size: 62.5%
-body
-   margin: 0
-   padding: 0
 
 /* Header Section Styling*/
 header#header
@@ -32,7 +30,8 @@ header#header
          li.nav-item
             cursor: pointer
             display: inline-flex
-            @include justify-align-self_center 
+            align-items: center
+            justify-content: space-around
             font-size: 2.5rem
             font-weight: map-get($font-weight, regular)
             text-transform: capitalize
@@ -42,7 +41,7 @@ header#header
                text-decoration: none
                color: $khp_textwhite
                &.active
-                  background: $khp_background_green
+                  color: $khp_green
                   text-decoration: underline               
                &:hover
                   color: $khp_green
@@ -57,7 +56,7 @@ header#header
                   padding: 5px 15px
                   color: $khp_green
                   &:hover
-                     background: $khp_background_green
+                     background: $khp_green
                      color: $khp_textwhite
                      transition-property: color, background-color
                      transition-duration: 200ms, 200ms
@@ -93,6 +92,7 @@ header#header
       margin: 0
       padding: 0
       text-align: center
+      font-size: 2rem
 
    img#main-img
       max-width: 100%
@@ -115,14 +115,15 @@ footer
    &#footer
       display: grid
       grid: 250px / repeat(8, 1fr)
-      background: #52055c
-      color: #fff
-      border-top: solid #20b62f 5px
+      background: $khp_purple
+      color: $khp_purewhite
+      border-top: solid $khp_green 5px
    div
       &#address
          grid-column: 2 / 4
          @include justify-align-self_start-end
          margin-left: 70px
+         font-size: 1.6rem
    div
       &#social
          grid-column: 4 / 6
@@ -140,11 +141,13 @@ footer
          @include justify-align-self_center-end
          a
             color: $khp_purewhite
+            font-size: 1.6rem
 
    div
       &#copy
          grid-column: 7
          @include justify-align-self_start-end
+         font-size: 1.6rem
 
    
 

@@ -1,12 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Alice");
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower");
 /* Site Styling*/
 html {
   font-size: 62.5%;
-}
-
-body {
-  margin: 0;
-  padding: 0;
 }
 
 /* Header Section Styling*/
@@ -55,9 +51,11 @@ header#header .hcontainer ul#nav li.nav-item {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  justify-self: center;
-  -ms-flex-item-align: center;
-      align-self: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   font-size: 2.5rem;
   font-weight: 400;
   text-transform: capitalize;
@@ -70,7 +68,7 @@ header#header .hcontainer ul#nav li.nav-item a {
 }
 
 header#header .hcontainer ul#nav li.nav-item a.active {
-  background: #20b62f;
+  color: #20b62f;
   text-decoration: underline;
 }
 
@@ -151,6 +149,7 @@ header#header .hcontainer ul#nav li.nav-item span.divide {
   margin: 0;
   padding: 0;
   text-align: center;
+  font-size: 2rem;
 }
 
 .container-main img#main-img {
@@ -182,7 +181,7 @@ footer#footer {
   display: grid;
   grid: 250px/repeat(8, 1fr);
   background: #52055c;
-  color: #fff;
+  color: #ffffff;
   border-top: solid #20b62f 5px;
 }
 
@@ -196,6 +195,7 @@ footer div#address {
       -ms-grid-row-align: end;
       align-self: end;
   margin-left: 70px;
+  font-size: 1.6rem;
 }
 
 footer div#social {
@@ -229,6 +229,7 @@ footer div#dev {
 
 footer div#dev a {
   color: #ffffff;
+  font-size: 1.6rem;
 }
 
 footer div#copy {
@@ -239,5 +240,6 @@ footer div#copy {
   -ms-flex-item-align: end;
       -ms-grid-row-align: end;
       align-self: end;
+  font-size: 1.6rem;
 }
 /*# sourceMappingURL=main.css.map */
