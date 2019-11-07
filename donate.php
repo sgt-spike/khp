@@ -1,4 +1,6 @@
 <?php
+    include 'php/khp_variables.php';
+    define('TITLE', $khp . 'Please Donate!');
     require 'header.php';
 ?>
     <div id="582ef6a7-f05c-4f1a-bdc0-26de1f18e7f2">

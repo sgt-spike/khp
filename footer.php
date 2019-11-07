@@ -11,7 +11,6 @@
       <a href="https://www.linkedin.com/in/katie-s-handprint-4b8a23161"><i class="fab fa-linkedin-in"></i></a>
       <a href="https://twitter.com/KatiesHandprint"><i class="fab fa-twitter"></i></a>
       <a href="http://instagram.com/katieshandprint"><i class="fab fa-instagram"></i></a>
-
    </div>
    <div id="dev">   
       <p>Developed by <a href="https://www.spikedevelopments.com">Spike Developments</a></p>
@@ -21,5 +20,6 @@
    </div>
 </footer>
 <script src="js/links.js"></script>
+<script src="js/navsidebar.js"></script>
 </body>
 </html>

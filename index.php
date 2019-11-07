@@ -1,8 +1,11 @@
 <?php
+include 'php/khp_variables.php';
+define('TITLE', $khp . 'Home');
 require 'header.php';
 ?>     
    <main id="main" class="container-main main">
       <h1 id="main-heading">Trying to ease some of the financial burden, if even just a little</h1>
+      <h1 id="main-heading-mobile">Trying to ease some of the financial burden.<br> If even just a little</h1>
       <figure class="main-fig">
       <img id="main-img" src="img/Katie.jpg" alt="Beautiful Katie">
       <figcaption>The Beautiful Katie</figcaption>

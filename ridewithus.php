@@ -1,4 +1,6 @@
 <?php
+   include 'php/khp_variables.php';
+   define('TITLE', $khp . 'Events');
    require 'header.php';
 ?>
    <main>

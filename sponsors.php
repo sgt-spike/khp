@@ -1,8 +1,10 @@
 <?php
+   include 'php/khp_variables.php';
+   define('TITLE', $khp . 'Sponsors');
    require 'header.php';
 ?>
 
-   <main class="container">
+   <main class="main-container">
       <h1 class="main-heading" id="our-sponsors">Our Wonderful Sponsors</h1>
       <div class="img-container">
          <div class="img-group">

@@ -1,14 +1,14 @@
-@mixin mainGrid
-   display: grid
-   grid: repeat(7, 175px)/repeat(12, 1fr)
-
-@mixin headerGrid
-   display: grid
-   grid: 175px / repeat(8, 1fr)
-
 @mixin justify-align-self_center
    justify-self: center
    align-self: center
+
+@mixin justify-align-self_start
+   justify-self: start
+   align-self: start
+
+@mixin justify-align-self_end-end
+   justify-self: end
+   align-self: end
 
 @mixin justify-align-self_start-end
    justify-self: start
@@ -21,4 +21,8 @@
 @mixin justify-align-self_center-start
    justify-self: center
    align-self: start
-   
+
+@mixin justify-align-self_start-center
+   justify-self: start
+   align-self: center
+
