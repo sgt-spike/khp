@@ -13,14 +13,17 @@ nav.sidebar
    display: none
 
 header#header
-   display: grid
    font-family: 'Indie Flower', cursive
    background: $khp-purple
+   border: none
    height: 175px
 
    .hcontainer
+      height: inherit
+      width: inherit
       display: grid
-      grid-column: 1/9
+      grid-column: 1/13
+      align-items: center
 
       img#logo
          max-width: 142px
@@ -40,13 +43,12 @@ header#header
             font-weight: map-get($font-weight, regular)
             text-transform: capitalize
             text-align: center
-
-            a
+            a.active
+               color: $khp_green
+               text-decoration: underline
+            a.nav-item-a
                text-decoration: none
-               color: $khp_textwhite
-               &.active
-                  color: $khp_green
-                  text-decoration: underline               
+               color: $khp_textwhite                 
                &:hover
                   color: $khp_green
                   transition-property: color
@@ -66,7 +68,17 @@ header#header
                      transition-duration: 200ms, 200ms
                      transition-timing-function: ease-in-out, ease-in-out
                      transition-delay: 0s, 0s
-            
+            a#contact.active
+               background: $khp_green
+               color: $khp_textwhite
+               border: solid 2px $khp_green
+               border-radius: 50px
+               text-align: center
+               padding: 5px 15px
+
+            div#sub-div
+               margin-left: 15px
+
             span.divide
                color: $khp_green
                font-size: 3.5rem
@@ -77,29 +89,32 @@ header#header
    
 
 /* Index page styling*/
-.container-main
+main.container-main
    display: grid
    font-family: 'Alice', serif
    color: $khp_purple
-   a#arrow
+   div.div-arrow
       grid-row: 1/2
       grid-column: 1/13
-      @include justify-align-self_start
-      font-size: 1.5rem
-   h1
+      background: $khp_purple
+      a#arrow
+         font-size: 1.5rem
+         color: $khp_green
+         text-decoration: none
+   h1.main-h1
+      grid-row: 1/2
+      grid-column: 1/13
+      @include justify-align-self_center
       text-shadow: 2px 2px 4px $khp_purple
       font-size: 3rem
       text-align: center
       padding: 25px
- 
    #main-heading, #main-heading-mobile
       grid-row: 1
       grid-column: 1 / 13
       @include justify-align-self_center
-
    #main-heading-mobile
       display: none
-
    .main-fig
       grid-row: 2/8
       grid-column: 3/7
@@ -107,17 +122,14 @@ header#header
       padding: 0
       text-align: center
       font-size: 2rem
-
    img#main-img
       width: 75%
       height: auto
-
    #main-art
       grid-row: 2 / 8
       grid-column: 7 / 11
       margin: 0
       padding: 0
-
    #main-art p
       font-size: 2.5rem
       line-height: 1.8em
@@ -125,12 +137,7 @@ header#header
       padding: 0 25px
 
 /* Styling for Family Stories Main Page */
-main#stories
-   
-   #stories-h1
-      grid-row: 1
-      grid-column: 1/13
-      @include justify-align-self_center
+main.container-main
    #stories-ul
       grid-row: 2/8
       @include justify-align-self_center
@@ -140,7 +147,6 @@ main#stories
          li.gallery 
             display: flex
             justify-content: space-around
-            align-items: stretch
             margin: 5px
             border: 1px solid #ccc
             border-radius: 5px
@@ -149,38 +155,30 @@ main#stories
             color: $khp_green
             font-size: 2rem
             list-style: none
-
             &:hover
                border: 1px solid #777
                cursor: pointer
-            
             .img-main
                width: 15%
                height: 25%
                padding: 25px
                align-self: center
-
             div.desc
                align-self: center
-
                h2
                   margin: 0 0 25px 0
-               
+                  text-align: center
                p
                   text-align: left
                   font-size: 2rem
                   margin: 0
+
 /* Styling for Danica's Page */
-main#Danica
-   #heading-danica
-      grid-row: 1/2
-      grid-column: 1/13
-      @include justify-align-self_center
-      color: $khp_green
-      font-size: 3rem
-   
+main.container-main
+   h1#heading-danica
+      grid-row: 2/3
    article#art-danica
-      grid-row: 2/8
+      grid-row: 3/9
       grid-column: 1/13
       @include justify-align-self_start
       font-size: 2rem
@@ -211,16 +209,13 @@ main#Danica
             max-width: 50%
             margin: inherit
             padding: inherit
+
 /* Styling for Nathan's page */
-main#Nathan
+main.container-main
    h1#heading-nathan
-      grid-row: 1
-      grid-column: 1/13
-      @include justify-align-self_center
-      color: $khp_green
-      font-size: 3rem
+      grid-row: 2/3
    article#art-nathan
-      grid-row: 2/8
+      grid-row: 3/9
       grid-column: 2/12
       @include justify-align-self_start
       font-size: 2rem
@@ -233,20 +228,15 @@ main#Nathan
       img#nathan2
          float: right
    img#nathan3
-      grid-row: 8/13
+      grid-row: 9/13
       grid-column: 1/13
       @include justify-align-self_center
       height: auto
       max-width: 25%
       padding: 10px
 
-/* Styling for WhoWeAre main page *///I
-main
-   h1#board-h1
-      grid-row: 1/2
-      grid-column: 1/13
-      text-align: center
-      @include justify-align-self_center
+/* Styling for WhoWeAre main page */
+main.container-main
    div#board
       grid-row: 2/5
       grid-column: 3/11
@@ -274,27 +264,32 @@ main
             div.desc
                padding: 15px
                text-align: center
+   div.container-art
+      grid-row: 2/6
+      grid-column: 1/13
+      display: grid
+      grid: 100% / repeat(2,50%)
+      div.div-img
+         grid-column: 1/2
+         img.whoweare-img
+            display: block
+            margin: auto
+            height: auto
+            max-width: 75%
+            padding: 25px
+      div.div-art
+         grid-column: 2/3
+         padding: 25px
+         h2
+            font-size: 3rem
+            font-weight: bolder
+            padding-bottom: 10px
+         article.whoweare-art
+            p
+               font-size: 2rem
 
-   article.whoweare-art
-      grid-row: 2/8
-      grid-column: 1/13
-      font-size: 2rem
-      img.whoweare-img
-         height: auto
-         max-width: 75%
-         float: left
-         margin: 25px
 /* Styling for sponsor page */
-main.main-container
-   h1#our-sponsors
-      grid-row: 1/2
-      grid-column: 1/13
-      text-align: center
-      @include justify-align-self_center
-      text-shadow: 2px 2px 4px $khp_purple
-      font-size: 3rem
-      text-align: center
-      padding: 25px
+main.container-main
    div.img-container
       grid-row: 2/5
       grid-column: 1/13
@@ -304,9 +299,11 @@ main.main-container
          justify-content: center
          align-items: center
          img
-            height: 10%
-            width: 10%
-            margin: 50px
+            height: 15%
+            width: 15%
+            margin: 15px
+      div.mobile-img-group
+         display: none
 
 /* Styling for Footer */
 footer

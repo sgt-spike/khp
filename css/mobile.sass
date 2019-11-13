@@ -5,8 +5,10 @@
 @import '_mobilefirst'
 /* Header Styling for mobile */
 @media screen and (max-width: 850px)
+   header
+      width: 100%
    header#header .hcontainer img#logo
-      grid-column: 1/9
+      grid-column: 1/13
       grid-row: 1/2
       @include justify-align-self_center
 
@@ -25,6 +27,7 @@
       font-size: 3rem
    /* Styling for Sidebar Nav */
    nav.sidebar
+      font-family: 'Indie Flower', cursive
       display: initial
       height: 100%
       width: 0
@@ -42,36 +45,36 @@
          margin: 0
          padding: 0
 
-      .closebtn
-         position: absolute
-         top: 0
-         right: 25px
-         font-size: 3.6rem
-         margin-left: 50px
-         color: $khp_green
-         text-decoration: none
-      
-      li.nav-sidebar-item
-         padding: 8px 8px 8px 32px
-         text-decoration: none
-         cursor: pointer
-         font-size: 2.5rem
-         font-weight: map-get($font-weight, regular)
-         text-transform: capitalize
-         text-align: left
-         a
+         a.closebtn
+            position: absolute
+            top: 0
+            right: 25px
+            font-size: 3.6rem
+            margin-left: 50px
+            color: $khp_green
             text-decoration: none
-            color: $khp-textwhite
-            &:active
+      
+         li.nav-sidebar-item
+            padding: 8px 8px 8px 32px
+            text-decoration: none
+            cursor: pointer
+            font-size: 2.5rem
+            font-weight: map-get($font-weight, regular)
+            text-transform: capitalize
+            text-align: left
+            a.active
                color: $khp_green
                text-decoration: underline
-            &:hover
-               color: $khp_green
-               transition-property: color
-               transition-duration: 200ms, 200ms
-               transition-timing-function: ease-in-out, ease-in-out
-               transition-delay: 0s, 0s
-            &#contact
+            a.nav-sidebar-item-a
+               text-decoration: none
+               color: $khp-textwhite
+               &:hover
+                  color: $khp_green
+                  transition-property: color
+                  transition-duration: 200ms, 200ms
+                  transition-timing-function: ease-in-out, ease-in-out
+                  transition-delay: 0s, 0s
+               &#contact
                   border: solid 2px $khp_green
                   border-radius: 50px
                   text-align: center
@@ -95,6 +98,7 @@
 
       #main-heading-mobile
          display: initial
+         text-align: center
 
       figure.main-fig
          grid-column: 1/13
@@ -102,19 +106,21 @@
          font-size: 2rem
    
       img#main-img
+         height: auto
          width: 100%
+         padding: 15px
 
       article#main-art
          grid-column: 1/13
          grid-row: 4/13
-         padding: 10px 0
+         padding: 10px
          p
             font-size: 2rem
             margin: inherit
             padding: inherit
    
    /* Main Family Stories page */
-   main#stories
+   main.container-main
       #stories-h1
          margin: 0
       #stories-ul
@@ -122,35 +128,65 @@
             li.gallery
                flex-direction: column
                .img-main
-                  width: 50%
-                  height: 50%
+                  height: auto
+                  width: 100%
+               div.desc
+                  h2, p
+                     margin: 10px
 
-   main
-      #arrow
-        grid-row: 1/2
-        grid-column: 1/13
-        @include justify-align-self_start
-   
-   main#Nathan
+
+   /* Mobile Style for Nathan's page */   
+   main.container-main
       article#art-nathan
          img.img-nathan
             max-width: 50%
       img#nathan3
          max-width: 50%
-
-   main
+   /* Mobile Style for who we are */
+   main.container-main
       article.whoweare-art
          display: flex
          flex-flow: column nowrap
          justify-content: center
    
+   /* Mobile style for Board Member's page */
+   main.container-main
+      div.container-art
+         display: flex
+         flex-flow: column nowrap
+         justify-items: center
+         div.div-img
+            width: 100vw
+         div.div-art
+            margin: 0
+            padding: 0
+            h2
+               text-align: center
+               padding: 10px
+            p
+               padding: 10px
+      
+   
    /* Mobile Style for Sponsor page */
-   main.main-container
+   main.container-main
       div.img-container
          div.img-group
-            img
-               height: 50%
-               width: 50%
+            display: none
+         div.mobile-img-group
+            display: flex
+            flex-flow: column nowrap
+            div.mobile-sponsor-div
+               border-bottom: solid 3px $khp_purple
+               &:last-child
+                  border-bottom: none
+               img
+                  height: 50%
+                  width: 50%
+                  padding: 15px 0
+                  display: block
+                  margin-left: auto
+                  margin-right: auto
+                  
    /* Styling for footer */
    footer
       div

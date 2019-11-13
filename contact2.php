@@ -1,9 +1,6 @@
 <?php
    require 'header.php';
 ?>
-   <script>
-      document.querySelector('head').innerHTML += '<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">';
-   </script>
    <main class="container">
       <h1 id="contact-h1">Contact Us</h1>
          <div id="contact-form">

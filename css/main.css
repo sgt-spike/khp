@@ -11,19 +11,23 @@ nav.sidebar {
 }
 
 header#header {
-  display: -ms-grid;
-  display: grid;
   font-family: 'Indie Flower', cursive;
   background: #52055c;
+  border: none;
   height: 175px;
 }
 
 header#header .hcontainer {
+  height: inherit;
+  width: inherit;
   display: -ms-grid;
   display: grid;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 8;
-  grid-column: 1/9;
+  -ms-grid-column-span: 12;
+  grid-column: 1/13;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header#header .hcontainer img#logo {
@@ -64,17 +68,17 @@ header#header .hcontainer ul#nav li.nav-item {
   text-align: center;
 }
 
-header#header .hcontainer ul#nav li.nav-item a {
-  text-decoration: none;
-  color: #d9d8d8;
-}
-
 header#header .hcontainer ul#nav li.nav-item a.active {
   color: #20b62f;
   text-decoration: underline;
 }
 
-header#header .hcontainer ul#nav li.nav-item a:hover {
+header#header .hcontainer ul#nav li.nav-item a.nav-item-a {
+  text-decoration: none;
+  color: #d9d8d8;
+}
+
+header#header .hcontainer ul#nav li.nav-item a.nav-item-a:hover {
   color: #20b62f;
   -webkit-transition-property: color;
   transition-property: color;
@@ -86,7 +90,7 @@ header#header .hcontainer ul#nav li.nav-item a:hover {
           transition-delay: 0s, 0s;
 }
 
-header#header .hcontainer ul#nav li.nav-item a#contact {
+header#header .hcontainer ul#nav li.nav-item a.nav-item-a#contact {
   border: solid 2px #20b62f;
   border-radius: 50px;
   text-align: center;
@@ -94,7 +98,7 @@ header#header .hcontainer ul#nav li.nav-item a#contact {
   color: #20b62f;
 }
 
-header#header .hcontainer ul#nav li.nav-item a#contact:hover {
+header#header .hcontainer ul#nav li.nav-item a.nav-item-a#contact:hover {
   background: #20b62f;
   color: #d9d8d8;
   -webkit-transition-property: color, background-color;
@@ -105,6 +109,19 @@ header#header .hcontainer ul#nav li.nav-item a#contact:hover {
           transition-timing-function: ease-in-out, ease-in-out;
   -webkit-transition-delay: 0s, 0s;
           transition-delay: 0s, 0s;
+}
+
+header#header .hcontainer ul#nav li.nav-item a#contact.active {
+  background: #20b62f;
+  color: #d9d8d8;
+  border: solid 2px #20b62f;
+  border-radius: 50px;
+  text-align: center;
+  padding: 5px 15px;
+}
+
+header#header .hcontainer ul#nav li.nav-item div#sub-div {
+  margin-left: 15px;
 }
 
 header#header .hcontainer ul#nav li.nav-item span.divide {
@@ -118,36 +135,48 @@ header#header .hcontainer button.openbtn {
 }
 
 /* Index page styling*/
-.container-main {
+main.container-main {
   display: -ms-grid;
   display: grid;
   font-family: 'Alice', serif;
   color: #52055c;
 }
 
-.container-main a#arrow {
+main.container-main div.div-arrow {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1/2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-column: 1/13;
-  -ms-grid-column-align: start;
-      justify-self: start;
-  -ms-flex-item-align: start;
-      -ms-grid-row-align: start;
-      align-self: start;
-  font-size: 1.5rem;
+  background: #52055c;
 }
 
-.container-main h1 {
+main.container-main div.div-arrow a#arrow {
+  font-size: 1.5rem;
+  color: #20b62f;
+  text-decoration: none;
+}
+
+main.container-main h1.main-h1 {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 12;
+  grid-column: 1/13;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   text-shadow: 2px 2px 4px #52055c;
   font-size: 3rem;
   text-align: center;
   padding: 25px;
 }
 
-.container-main #main-heading, .container-main #main-heading-mobile {
+main.container-main #main-heading, main.container-main #main-heading-mobile {
   -ms-grid-row: 1;
   grid-row: 1;
   -ms-grid-column: 1;
@@ -160,11 +189,11 @@ header#header .hcontainer button.openbtn {
       align-self: center;
 }
 
-.container-main #main-heading-mobile {
+main.container-main #main-heading-mobile {
   display: none;
 }
 
-.container-main .main-fig {
+main.container-main .main-fig {
   -ms-grid-row: 2;
   -ms-grid-row-span: 6;
   grid-row: 2/8;
@@ -177,12 +206,12 @@ header#header .hcontainer button.openbtn {
   font-size: 2rem;
 }
 
-.container-main img#main-img {
+main.container-main img#main-img {
   width: 75%;
   height: auto;
 }
 
-.container-main #main-art {
+main.container-main #main-art {
   -ms-grid-row: 2;
   -ms-grid-row-span: 6;
   grid-row: 2 / 8;
@@ -193,7 +222,7 @@ header#header .hcontainer button.openbtn {
   padding: 0;
 }
 
-.container-main #main-art p {
+main.container-main #main-art p {
   font-size: 2.5rem;
   line-height: 1.8em;
   margin: inherit;
@@ -201,20 +230,7 @@ header#header .hcontainer button.openbtn {
 }
 
 /* Styling for Family Stories Main Page */
-main#stories #stories-h1 {
-  -ms-grid-row: 1;
-  grid-row: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 12;
-  grid-column: 1/13;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-}
-
-main#stories #stories-ul {
+main.container-main #stories-ul {
   -ms-grid-row: 2;
   -ms-grid-row-span: 6;
   grid-row: 2/8;
@@ -226,19 +242,16 @@ main#stories #stories-ul {
   padding: 0 25px;
 }
 
-main#stories #stories-ul a {
+main.container-main #stories-ul a {
   text-decoration: none;
 }
 
-main#stories #stories-ul a li.gallery {
+main.container-main #stories-ul a li.gallery {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
   margin: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -249,12 +262,12 @@ main#stories #stories-ul a li.gallery {
   list-style: none;
 }
 
-main#stories #stories-ul a li.gallery:hover {
+main.container-main #stories-ul a li.gallery:hover {
   border: 1px solid #777;
   cursor: pointer;
 }
 
-main#stories #stories-ul a li.gallery .img-main {
+main.container-main #stories-ul a li.gallery .img-main {
   width: 15%;
   height: 25%;
   padding: 25px;
@@ -263,43 +276,34 @@ main#stories #stories-ul a li.gallery .img-main {
       align-self: center;
 }
 
-main#stories #stories-ul a li.gallery div.desc {
+main.container-main #stories-ul a li.gallery div.desc {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
 }
 
-main#stories #stories-ul a li.gallery div.desc h2 {
+main.container-main #stories-ul a li.gallery div.desc h2 {
   margin: 0 0 25px 0;
+  text-align: center;
 }
 
-main#stories #stories-ul a li.gallery div.desc p {
+main.container-main #stories-ul a li.gallery div.desc p {
   text-align: left;
   font-size: 2rem;
   margin: 0;
 }
 
 /* Styling for Danica's Page */
-main#Danica #heading-danica {
-  -ms-grid-row: 1;
+main.container-main h1#heading-danica {
+  -ms-grid-row: 2;
   -ms-grid-row-span: 1;
-  grid-row: 1/2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 12;
-  grid-column: 1/13;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  color: #20b62f;
-  font-size: 3rem;
+  grid-row: 2/3;
 }
 
-main#Danica article#art-danica {
-  -ms-grid-row: 2;
+main.container-main article#art-danica {
+  -ms-grid-row: 3;
   -ms-grid-row-span: 6;
-  grid-row: 2/8;
+  grid-row: 3/9;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-column: 1/13;
@@ -312,7 +316,7 @@ main#Danica article#art-danica {
   margin: 25px;
 }
 
-main#Danica article#art-danica figure#danicaXmas {
+main.container-main article#art-danica figure#danicaXmas {
   float: left;
   margin: 0;
   padding: 0;
@@ -321,18 +325,18 @@ main#Danica article#art-danica figure#danicaXmas {
   width: 50%;
 }
 
-main#Danica article#art-danica figure#danicaXmas img#imgDanicaXmas {
+main.container-main article#art-danica figure#danicaXmas img#imgDanicaXmas {
   height: auto;
   max-width: 50%;
   margin: inherit;
   padding: inherit;
 }
 
-main#Danica article#art-danica p#p1 {
+main.container-main article#art-danica p#p1 {
   margin-top: 0;
 }
 
-main#Danica article#art-danica figure#danicaFig {
+main.container-main article#art-danica figure#danicaFig {
   float: right;
   margin: 0;
   padding: 0;
@@ -341,7 +345,7 @@ main#Danica article#art-danica figure#danicaFig {
   width: 50%;
 }
 
-main#Danica article#art-danica figure#danicaFig img#imgDanica {
+main.container-main article#art-danica figure#danicaFig img#imgDanica {
   height: auto;
   max-width: 50%;
   margin: inherit;
@@ -349,25 +353,16 @@ main#Danica article#art-danica figure#danicaFig img#imgDanica {
 }
 
 /* Styling for Nathan's page */
-main#Nathan h1#heading-nathan {
-  -ms-grid-row: 1;
-  grid-row: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 12;
-  grid-column: 1/13;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  color: #20b62f;
-  font-size: 3rem;
+main.container-main h1#heading-nathan {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
 }
 
-main#Nathan article#art-nathan {
-  -ms-grid-row: 2;
+main.container-main article#art-nathan {
+  -ms-grid-row: 3;
   -ms-grid-row-span: 6;
-  grid-row: 2/8;
+  grid-row: 3/9;
   -ms-grid-column: 2;
   -ms-grid-column-span: 10;
   grid-column: 2/12;
@@ -379,24 +374,24 @@ main#Nathan article#art-nathan {
   font-size: 2rem;
 }
 
-main#Nathan article#art-nathan img.img-nathan {
+main.container-main article#art-nathan img.img-nathan {
   height: auto;
   max-width: 25%;
   margin: 10px;
 }
 
-main#Nathan article#art-nathan img#nathan1 {
+main.container-main article#art-nathan img#nathan1 {
   float: left;
 }
 
-main#Nathan article#art-nathan img#nathan2 {
+main.container-main article#art-nathan img#nathan2 {
   float: right;
 }
 
-main#Nathan img#nathan3 {
-  -ms-grid-row: 8;
-  -ms-grid-row-span: 5;
-  grid-row: 8/13;
+main.container-main img#nathan3 {
+  -ms-grid-row: 9;
+  -ms-grid-row-span: 4;
+  grid-row: 9/13;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-column: 1/13;
@@ -410,23 +405,8 @@ main#Nathan img#nathan3 {
   padding: 10px;
 }
 
-/* Styling for WhoWeAre main page * */
-main h1#board-h1 {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 12;
-  grid-column: 1/13;
-  text-align: center;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-}
-
-main div#board {
+/* Styling for WhoWeAre main page */
+main.container-main div#board {
   -ms-grid-row: 2;
   -ms-grid-row-span: 3;
   grid-row: 2/5;
@@ -444,7 +424,7 @@ main div#board {
       justify-content: space-around;
 }
 
-main div#board a div.gallery {
+main.container-main div#board a div.gallery {
   margin: 5px;
   border: 1px solid #ccc;
   float: left;
@@ -457,59 +437,66 @@ main div#board a div.gallery {
   font-size: 2rem;
 }
 
-main div#board a div.gallery:hover {
+main.container-main div#board a div.gallery:hover {
   border: 1px solid #777;
   cursor: pointer;
 }
 
-main div#board a div.gallery img {
+main.container-main div#board a div.gallery img {
   width: 100%;
   height: auto;
 }
 
-main div#board a div.gallery div.desc {
+main.container-main div#board a div.gallery div.desc {
   padding: 15px;
   text-align: center;
 }
 
-main article.whoweare-art {
+main.container-main div.container-art {
   -ms-grid-row: 2;
-  -ms-grid-row-span: 6;
-  grid-row: 2/8;
+  -ms-grid-row-span: 4;
+  grid-row: 2/6;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-column: 1/13;
-  font-size: 2rem;
+  display: -ms-grid;
+  display: grid;
+  grid: 100%/repeat(2, 50%);
 }
 
-main article.whoweare-art img.whoweare-img {
+main.container-main div.container-art div.div-img {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+}
+
+main.container-main div.container-art div.div-img img.whoweare-img {
+  display: block;
+  margin: auto;
   height: auto;
   max-width: 75%;
-  float: left;
-  margin: 25px;
-}
-
-/* Styling for sponsor page */
-main.main-container h1#our-sponsors {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 12;
-  grid-column: 1/13;
-  text-align: center;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  text-shadow: 2px 2px 4px #52055c;
-  font-size: 3rem;
-  text-align: center;
   padding: 25px;
 }
 
-main.main-container div.img-container {
+main.container-main div.container-art div.div-art {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  padding: 25px;
+}
+
+main.container-main div.container-art div.div-art h2 {
+  font-size: 3rem;
+  font-weight: bolder;
+  padding-bottom: 10px;
+}
+
+main.container-main div.container-art div.div-art article.whoweare-art p {
+  font-size: 2rem;
+}
+
+/* Styling for sponsor page */
+main.container-main div.img-container {
   -ms-grid-row: 2;
   -ms-grid-row-span: 3;
   grid-row: 2/5;
@@ -518,7 +505,7 @@ main.main-container div.img-container {
   grid-column: 1/13;
 }
 
-main.main-container div.img-container div.img-group {
+main.container-main div.img-container div.img-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -534,10 +521,14 @@ main.main-container div.img-container div.img-group {
           align-items: center;
 }
 
-main.main-container div.img-container div.img-group img {
-  height: 10%;
-  width: 10%;
-  margin: 50px;
+main.container-main div.img-container div.img-group img {
+  height: 15%;
+  width: 15%;
+  margin: 15px;
+}
+
+main.container-main div.img-container div.mobile-img-group {
+  display: none;
 }
 
 /* Styling for Footer */

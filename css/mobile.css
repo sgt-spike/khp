@@ -2,10 +2,13 @@
 @import url("https://fonts.googleapis.com/css?family=Indie+Flower");
 /* Header Styling for mobile */
 @media screen and (max-width: 850px) {
+  header {
+    width: 100%;
+  }
   header#header .hcontainer img#logo {
     -ms-grid-column: 1;
-    -ms-grid-column-span: 8;
-    grid-column: 1/9;
+    -ms-grid-column-span: 12;
+    grid-column: 1/13;
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     grid-row: 1/2;
@@ -39,6 +42,7 @@
   }
   /* Styling for Sidebar Nav */
   nav.sidebar {
+    font-family: 'Indie Flower', cursive;
     display: initial;
     height: 100%;
     width: 0;
@@ -57,7 +61,7 @@
     margin: 0;
     padding: 0;
   }
-  nav.sidebar .closebtn {
+  nav.sidebar ul.nav-sidebar a.closebtn {
     position: absolute;
     top: 0;
     right: 25px;
@@ -66,7 +70,7 @@
     color: #20b62f;
     text-decoration: none;
   }
-  nav.sidebar li.nav-sidebar-item {
+  nav.sidebar ul.nav-sidebar li.nav-sidebar-item {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     cursor: pointer;
@@ -75,15 +79,15 @@
     text-transform: capitalize;
     text-align: left;
   }
-  nav.sidebar li.nav-sidebar-item a {
-    text-decoration: none;
-    color: #d9d8d8;
-  }
-  nav.sidebar li.nav-sidebar-item a:active {
+  nav.sidebar ul.nav-sidebar li.nav-sidebar-item a.active {
     color: #20b62f;
     text-decoration: underline;
   }
-  nav.sidebar li.nav-sidebar-item a:hover {
+  nav.sidebar ul.nav-sidebar li.nav-sidebar-item a.nav-sidebar-item-a {
+    text-decoration: none;
+    color: #d9d8d8;
+  }
+  nav.sidebar ul.nav-sidebar li.nav-sidebar-item a.nav-sidebar-item-a:hover {
     color: #20b62f;
     -webkit-transition-property: color;
     transition-property: color;
@@ -94,14 +98,14 @@
     -webkit-transition-delay: 0s, 0s;
             transition-delay: 0s, 0s;
   }
-  nav.sidebar li.nav-sidebar-item a#contact {
+  nav.sidebar ul.nav-sidebar li.nav-sidebar-item a.nav-sidebar-item-a#contact {
     border: solid 2px #20b62f;
     border-radius: 50px;
     text-align: center;
     padding: 5px 15px;
     color: #20b62f;
   }
-  nav.sidebar li.nav-sidebar-item a#contact:hover {
+  nav.sidebar ul.nav-sidebar li.nav-sidebar-item a.nav-sidebar-item-a#contact:hover {
     background: #20b62f;
     color: #d9d8d8;
     -webkit-transition-property: color, background-color;
@@ -123,6 +127,7 @@
   }
   main#main #main-heading-mobile {
     display: initial;
+    text-align: center;
   }
   main#main figure.main-fig {
     -ms-grid-column: 1;
@@ -134,7 +139,9 @@
     font-size: 2rem;
   }
   main#main img#main-img {
+    height: auto;
     width: 100%;
+    padding: 15px;
   }
   main#main article#main-art {
     -ms-grid-column: 1;
@@ -143,7 +150,7 @@
     -ms-grid-row: 4;
     -ms-grid-row-span: 9;
     grid-row: 4/13;
-    padding: 10px 0;
+    padding: 10px;
   }
   main#main article#main-art p {
     font-size: 2rem;
@@ -151,39 +158,31 @@
     padding: inherit;
   }
   /* Main Family Stories page */
-  main#stories #stories-h1 {
+  main.container-main #stories-h1 {
     margin: 0;
   }
-  main#stories #stories-ul a li.gallery {
+  main.container-main #stories-ul a li.gallery {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  main#stories #stories-ul a li.gallery .img-main {
-    width: 50%;
-    height: 50%;
+  main.container-main #stories-ul a li.gallery .img-main {
+    height: auto;
+    width: 100%;
   }
-  main #arrow {
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    grid-row: 1/2;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 12;
-    grid-column: 1/13;
-    -ms-grid-column-align: start;
-        justify-self: start;
-    -ms-flex-item-align: start;
-        -ms-grid-row-align: start;
-        align-self: start;
+  main.container-main #stories-ul a li.gallery div.desc h2, main.container-main #stories-ul a li.gallery div.desc p {
+    margin: 10px;
   }
-  main#Nathan article#art-nathan img.img-nathan {
+  /* Mobile Style for Nathan's page */
+  main.container-main article#art-nathan img.img-nathan {
     max-width: 50%;
   }
-  main#Nathan img#nathan3 {
+  main.container-main img#nathan3 {
     max-width: 50%;
   }
-  main article.whoweare-art {
+  /* Mobile Style for who we are */
+  main.container-main article.whoweare-art {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -195,10 +194,57 @@
         -ms-flex-pack: center;
             justify-content: center;
   }
+  /* Mobile style for Board Member's page */
+  main.container-main div.container-art {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    justify-items: center;
+  }
+  main.container-main div.container-art div.div-img {
+    width: 100vw;
+  }
+  main.container-main div.container-art div.div-art {
+    margin: 0;
+    padding: 0;
+  }
+  main.container-main div.container-art div.div-art h2 {
+    text-align: center;
+    padding: 10px;
+  }
+  main.container-main div.container-art div.div-art p {
+    padding: 10px;
+  }
   /* Mobile Style for Sponsor page */
-  main.main-container div.img-container div.img-group img {
+  main.container-main div.img-container div.img-group {
+    display: none;
+  }
+  main.container-main div.img-container div.mobile-img-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+  main.container-main div.img-container div.mobile-img-group div.mobile-sponsor-div {
+    border-bottom: solid 3px #52055c;
+  }
+  main.container-main div.img-container div.mobile-img-group div.mobile-sponsor-div:last-child {
+    border-bottom: none;
+  }
+  main.container-main div.img-container div.mobile-img-group div.mobile-sponsor-div img {
     height: 50%;
     width: 50%;
+    padding: 15px 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
   /* Styling for footer */
   footer div#social, footer div#address, footer div#copy, footer div#dev {

@@ -19,7 +19,6 @@
       <p>Katie's Handprint &copy 2018</p>
    </div>
 </footer>
-<script src="js/links.js"></script>
 <script src="js/navsidebar.js"></script>
 </body>
 </html>
