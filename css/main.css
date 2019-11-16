@@ -531,6 +531,54 @@ main.container-main div.img-container div.mobile-img-group {
   display: none;
 }
 
+/* Styling for Contact page */
+main.contact-container {
+  font-family: 'Alice', serif;
+  font-size: 1.5rem;
+  margin-bottom: 87px;
+}
+
+main.contact-container h1#contact-h1 {
+  font-size: 4rem;
+  text-align: center;
+  color: #52055c;
+}
+
+main.contact-container div#contact-form {
+  background: #20b62f;
+  border: 2px solid #52055c;
+  border-radius: 5px;
+  height: 75%;
+}
+
+main.contact-container div#contact-form div#form-heading {
+  display: initial;
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+main.contact-container div#contact-form div#form-errors {
+  display: none;
+}
+
+main.contact-container div#contact-form form {
+  margin: 25px;
+}
+
+main.contact-container div#contact-form form label {
+  font-weight: bold;
+}
+
+main.contact-container div#contact-form form button {
+  background: #52055c;
+  border: #52055c;
+}
+
+main.contact-container div#contact-form form label.validate input.validate {
+  width: 25px;
+}
+
 /* Styling for Footer */
 footer {
   width: 100%;
