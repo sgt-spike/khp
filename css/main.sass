@@ -309,6 +309,7 @@ main.contact-container
    font-family: 'Alice', serif
    font-size: 1.5rem
    margin-bottom: 87px
+   box-sizing: border-box
    h1#contact-h1
       font-size: 4rem
       text-align: center
@@ -318,24 +319,45 @@ main.contact-container
       border: 2px solid $khp_purple
       border-radius: 5px
       height: 75%
+      width: 75%
+      margin: auto
       div#form-heading
          display: initial
          font-size: 2.5rem
          text-align: center
          font-weight: bold
       div#form-errors
-         display: none
+         width: 50%
+         margin: auto
+         font-size: 2rem
+         font-weight: bold
+         p.error
+            color: red
+         p.success
+            color: $khp_purple
       form
-         margin: 25px
+         margin: auto
+         width: 50%
+         input.form-input
+            width: 100%
+            border-radius: 5px
+         textarea
+            border-radius: 5px
          label
             font-weight: bold
-         button
+         input.form-button
             background: $khp_purple
             border: $khp_purple
-            margin: 
+            border-radius: 5px 
+            margin-left: 2rem
+            height: 4rem
+            width: 8rem
+            color: $khp_purewhite
          label.validate
             input.validate
                width: 25px
+               border-radius: 5px
+               text-align: center
 
 /* Styling for Footer */
 footer

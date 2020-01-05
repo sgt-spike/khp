@@ -246,6 +246,24 @@
     margin-left: auto;
     margin-right: auto;
   }
+  /* Mobile Style for Contact Us Page */
+  main.contact-container div#contact-form {
+    width: 100%;
+    margin: auto;
+  }
+  main.contact-container form {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  main.contact-container form input.form-input {
+    display: block;
+    float: left;
+  }
+  main.contact-container form textarea {
+    width: 300px;
+    display: block;
+  }
   /* Styling for footer */
   footer div#social, footer div#address, footer div#copy, footer div#dev {
     -ms-grid-column-align: center;
