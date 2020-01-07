@@ -2,7 +2,7 @@
    include 'header.php';
    include 'php/handle_email.php';
 ?>
-   <main class="contact-container">
+   <main class="contact-container container">
       <h1 id="contact-h1">Contact Us</h1>
       <div id="contact-form">
          <div id="form-heading">
@@ -57,40 +57,40 @@
             } 
          ?>
             
-         <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" class="form" name="contact-form">
-            <div class="row">
+         <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" class="form" id="contact-form" >
+            <div class="form-group">
                <div class="col-25">
                   <label for="name">Full Name</label>
                </div>
                <div class="75">
-                  <input type="text" name="name" class="form-input" placeholder="Full Name" value="<?php if($errors) {echo $_POST['name'];}?>">
+                  <input type="text" name="name" class="form-control" placeholder="Full Name" value="<?php if($errors) {echo $_POST['name'];}?>">
                </div>
             </div>
-            <div class="row">
+            <div class="form-group">
                <div class="col-25">
                   <label for="email">Email Address</label>
                </div>
                <div class="75">
-                  <input type="email" name="email" class="form-input" placeholder="Email Address" value="<?php if($errors){ echo $_POST['email'];} ?>">
+                  <input type="email" name="email" class="form-control" placeholder="Email Address" value="<?php if($errors){ echo $_POST['email'];} ?>">
                </div>
             </div>
-            <div class="row">
+            <div class="form-group">
                <div class="col-25">
                   <label for="subject">Subject</label>
                </div>
                <div class="75">
-                  <input type="text" name="subject" class="form-input" placeholder="Subject" value="<?php if($errors){ echo $_POST['subject'];} ?>">
+                  <input type="text" name="subject" class="form-control" placeholder="Subject" value="<?php if($errors){ echo $_POST['subject'];} ?>">
                </div>
             </div>
-            <div class="row">
+            <div class="form-group">
                <div class="col-25">
                   <label for="message">Message</label>
                </div>
                <div class="75">
-                  <textarea name="message" class="form-input" cols="72" rows="20"><?php if($errors){ echo $_POST['message'];}  ?></textarea>
+                  <textarea name="message" class="form-control"  rows="20"><?php if($errors){ echo $_POST['message'];} ?></textarea>
                </div>
             </div>
-            <div class="row">
+            <div class="form-group">
                <label for="validate" class='validate'>Are You Human?</label>
                <label class="validate">
                   <span>6 + 2 = </span>
