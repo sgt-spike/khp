@@ -1,5 +1,5 @@
 <?php
-   include 'header.php';
+   include 'php/header.php';
    include 'php/handle_email.php';
 ?>
    <main class="contact-container container">
@@ -57,38 +57,22 @@
             } 
          ?>
             
-         <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" class="form" id="contact-form" >
+         <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" id="contact-form" >
             <div class="form-group">
-               <div class="col-25">
-                  <label for="name">Full Name</label>
-               </div>
-               <div class="75">
-                  <input type="text" name="name" class="form-control" placeholder="Full Name" value="<?php if($errors) {echo $_POST['name'];}?>">
-               </div>
+               <label for="name">Full Name</label>
+               <input type="text" name="name" class="form-control  form-control-lg" placeholder="Full Name" value="<?php if($errors) {echo $_POST['name'];}?>">
             </div>
             <div class="form-group">
-               <div class="col-25">
-                  <label for="email">Email Address</label>
-               </div>
-               <div class="75">
-                  <input type="email" name="email" class="form-control" placeholder="Email Address" value="<?php if($errors){ echo $_POST['email'];} ?>">
-               </div>
+               <label for="email">Email Address</label>
+               <input type="email" name="email" class="form-control form-control-lg" placeholder="Email Address" value="<?php if($errors){ echo $_POST['email'];} ?>">
             </div>
             <div class="form-group">
-               <div class="col-25">
-                  <label for="subject">Subject</label>
-               </div>
-               <div class="75">
-                  <input type="text" name="subject" class="form-control" placeholder="Subject" value="<?php if($errors){ echo $_POST['subject'];} ?>">
-               </div>
+               <label for="subject">Subject</label>
+               <input type="text" name="subject" class="form-control form-control-lg" placeholder="Subject" value="<?php if($errors){ echo $_POST['subject'];} ?>">
             </div>
             <div class="form-group">
-               <div class="col-25">
-                  <label for="message">Message</label>
-               </div>
-               <div class="75">
-                  <textarea name="message" class="form-control"  rows="20"><?php if($errors){ echo $_POST['message'];} ?></textarea>
-               </div>
+               <label for="message">Message</label>
+               <textarea name="message" class="form-control  form-control-lg" rows=20><?php if($errors){ echo $_POST['message'];} ?></textarea>
             </div>
             <div class="form-group">
                <label for="validate" class='validate'>Are You Human?</label>
@@ -97,12 +81,11 @@
                   <input type="text" name="validate" class="validate" placeholder="#" value="<?php if($errors){ echo $_POST['validate'];} ?>">
                </label>
             </div>
-            <div class="row">
-               <input type="submit" name="submit" class="form-button" value="Submit">
-            </div>
+            <button type="submit" name="submit" class="btn btn-lg" value="Submit">Submit</button>
          </form>
-      </>
+      </div>
    </main>
+
 <?php
-   require 'footer.php';
+   require 'php/footer.php';
 ?>

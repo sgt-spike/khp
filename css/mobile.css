@@ -212,11 +212,16 @@
     margin: 0;
     padding: 0;
   }
-  main.container-main div.container-art div.div-art h2 {
+  main.container-main div.container-art div.div-art h2.whoweare-h2 {
     text-align: center;
     padding: 10px;
+    font-size: 3rem;
   }
-  main.container-main div.container-art div.div-art p {
+  main.container-main div.container-art div.div-art article.whoweare-art {
+    font-size: 2rem;
+    padding: 10px;
+  }
+  main.container-main div.container-art div.div-art article.whoweare-art p {
     padding: 10px;
   }
   /* Mobile Style for Sponsor page */

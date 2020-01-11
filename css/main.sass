@@ -136,14 +136,22 @@ main.container-main
       margin: inherit
       padding: 0 25px
 
-/* Styling for Family Stories Main Page */
+/* Styling for Family Stories Page */
 main.container-main
    #stories-ul
       grid-row: 2/8
       @include justify-align-self_center
-      padding: 0 25px
+      padding: 0 50px
+      p.error
+         color: red
+         font-size: 3rem
+         font-weight: 700
+      a:nth-child(even)
+         padding: 25px
       a
          text-decoration: none
+         cursor: pointer
+            padding: 25px
          li.gallery 
             display: flex
             justify-content: space-around
@@ -172,68 +180,62 @@ main.container-main
                   text-align: left
                   font-size: 2rem
                   margin: 0
-
-/* Styling for Danica's Page */
-main.container-main
-   h1#heading-danica
+                  padding-right: 10px
+   div.slideshow-container
       grid-row: 2/3
-   article#art-danica
-      grid-row: 3/9
       grid-column: 1/13
+      max-width: 50%
+      position: relative
+      margin: auto
+      padding: 25px
+      div.mySlides
+         display: none
+         img
+            margin: auto
+            height: 100%
+            width: 100%
+      .prev, .next
+         cursor: pointer
+         position: absolute
+         top: 50%
+         width: auto
+         margin-top: -22px
+         padding: 16px
+         color: $khp_purewhite
+         font-weight: bold
+         font-size: 18px
+         transition: 0.6s ease
+         border-radius: 0 3px 3px 0
+         user-select: none
+      .next
+         right: 20px
+         border-radius: 3px 0 0 3px
+   div.dot-group
+      grid-row: 3/5
+      grid-column: 1/13
+      text-align: center
+      span.dot
+         cursor: pointer
+         height: 15px
+         width: 15px
+         margin: 0 2px
+         background-color: $khp_green
+         border-radius: 50%
+         display: inline-block
+         transition: background-color 0.6s ease
+         .active, .dot:hover
+            background-color: #717171
+   div.story-h1
+      grid-row: 5/6
+      grid-column: 1/13
+      text-align: center
+      h1
+         font-weight: bolder
+   div.story-article
+      grid-row: 6/13
       @include justify-align-self_start
       font-size: 2rem
-      margin: 25px
-      figure#danicaXmas
-         float: left
-         margin: 0
-         padding: 0
-         font-size: 1.5rem
-         text-align: center
-         width: 50%
-         img#imgDanicaXmas
-            height: auto
-            max-width: 50%
-            margin: inherit
-            padding: inherit
-      p#p1
-         margin-top: 0
-      figure#danicaFig
-         float: right
-         margin: 0
-         padding: 0
-         font-size: 1.5rem
-         text-align: center
-         width: 50%
-         img#imgDanica
-            height: auto
-            max-width: 50%
-            margin: inherit
-            padding: inherit
-
-/* Styling for Nathan's page */
-main.container-main
-   h1#heading-nathan
-      grid-row: 2/3
-   article#art-nathan
-      grid-row: 3/9
-      grid-column: 2/12
-      @include justify-align-self_start
-      font-size: 2rem
-      img.img-nathan
-         height: auto
-         max-width: 25%
-         margin: 10px
-      img#nathan1
-         float: left
-      img#nathan2
-         float: right
-   img#nathan3
-      grid-row: 9/13
-      grid-column: 1/13
-      @include justify-align-self_center
-      height: auto
-      max-width: 25%
-      padding: 10px
+      padding: 25px 100px   
 
 /* Styling for WhoWeAre main page */
 main.container-main
@@ -280,11 +282,13 @@ main.container-main
       div.div-art
          grid-column: 2/3
          padding: 25px
-         h2
+         h2.whoweare-h2
             font-size: 3rem
             font-weight: bolder
             padding-bottom: 10px
+            text-align: center
          article.whoweare-art
+            font-size: 2rem
             p
                font-size: 2rem
 
@@ -338,26 +342,20 @@ main.contact-container
       form
          margin: auto
          max-width: 90%
-         input.form-input
-            width: 100%
-            border-radius: 5px
-         textarea
-            border-radius: 5px
-         label
-            font-weight: bold
-         input.form-button
-            background: $khp_purple
-            border: $khp_purple
-            border-radius: 5px 
-            margin-left: 2rem
-            height: 4rem
-            width: 8rem
-            color: $khp_purewhite
-         label.validate
-            input.validate
-               width: 25px
-               border-radius: 5px
-               text-align: center
+         div.form-group
+            label
+               font-weight: 700
+            label.validate
+               input.validate
+                  width: 25px
+                  border-radius: 5px
+                  text-align: center
+         button.btn
+               background: $khp_purple
+               border: $khp_purple
+               color: $khp_purewhite
+               margin-bottom: 10px
+               width: 10rem
 
 /* Styling for Footer */
 footer

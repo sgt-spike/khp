@@ -1,7 +1,7 @@
 <?php
    include 'php/khp_variables.php';
    define('TITLE', $khp . 'Events');
-   require 'header.php';
+   require 'php/header.php';
 ?>
    <main>
    <div id="0d8ca1ef-dffc-40c6-a16c-bcff48894e5c">
@@ -9,5 +9,5 @@
 </div>
    </main>
 <?php
-   require 'footer.php';
+   require 'php/footer.php';
 ?>

@@ -1,7 +1,7 @@
 <?php
    include 'php/khp_variables.php';
    define('TITLE', $khp . 'Sponsors');
-   require 'header.php';
+   require 'php/header.php';
 ?>
 
    <main class="container-main">
@@ -67,5 +67,5 @@
    </main>
 
 <?php
-   require 'footer.php';
+   require 'php/footer.php';
 ?>
