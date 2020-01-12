@@ -16,7 +16,7 @@
       <p>Developed by <a href="https://www.spikedevelopments.com">Spike Developments</a></p>
    </div>
    <div id="copy">
-      <p>Katie's Handprint &copy 2018</p>
+      <p>Katie's Handprint &copy; 2018</p>
    </div>
 </footer>
 <script src="js/navsidebar.js"></script>
