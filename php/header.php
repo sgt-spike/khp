@@ -19,13 +19,13 @@
             <a class="nav-sidebar-item-a" href="index.php" id="sidebar-home" onclick="setActiveLink()">Home</a>
          </li>
          <li class="nav-sidebar-item" >
-            <a class="nav-sidebar-item-a" href="familystories.php?q=stories" id="sidebar-stories">Family Stories</a>
+            <a class="nav-sidebar-item-a" href="familystories.php?page=Gallery" id="sidebar-stories">Family Stories</a>
          </li>
          <li class="nav-sidebar-item" >
             <a class="nav-sidebar-item-a" href="ridewithus.php" id="sidebar-events">Events</a>
          </li>
          <li class="nav-sidebar-item with-sub">
-            <a class="nav-sidebar-item-a" href="whoweare.php?q=TheBoard" id="sidebar-us">Who We Are</a>
+            <a class="nav-sidebar-item-a" href="whoweare.php?page=Board" id="sidebar-us">Who We Are</a>
          </li>
          <li class="nav-sidebar-item" >
             <a class="nav-sidebar-item-a" href="sponsors.php"  id="sidebar-sponsors">Sponsors</a>

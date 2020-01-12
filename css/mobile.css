@@ -158,28 +158,30 @@
     padding: inherit;
   }
   /* Main Family Stories page */
-  main.container-main #stories-h1 {
+  main.container-main .main-h1 {
     margin: 0;
   }
-  main.container-main #stories-ul a li.gallery {
+  main.container-main .stories-ul {
+    padding: 15px;
+  }
+  main.container-main .stories-ul a li.gallery {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  main.container-main #stories-ul a li.gallery .img-main {
+  main.container-main .stories-ul a li.gallery .img-main {
     height: auto;
     width: 100%;
   }
-  main.container-main #stories-ul a li.gallery div.desc h2, main.container-main #stories-ul a li.gallery div.desc p {
+  main.container-main .stories-ul a li.gallery div.desc h2, main.container-main .stories-ul a li.gallery div.desc p {
     margin: 10px;
   }
-  /* Mobile Style for Nathan's page */
-  main.container-main article#art-nathan img.img-nathan {
-    max-width: 50%;
+  main.container-main div.slideshow-container {
+    max-width: 75%;
   }
-  main.container-main img#nathan3 {
-    max-width: 50%;
+  main.container-main div.story-article {
+    padding: 25px 25px;
   }
   /* Mobile Style for who we are */
   main.container-main article.whoweare-art {
