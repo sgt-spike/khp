@@ -122,13 +122,6 @@
     font-size: 2.5rem;
     padding: 0;
   }
-  main#main #main-heading {
-    display: none;
-  }
-  main#main #main-heading-mobile {
-    display: initial;
-    text-align: center;
-  }
   main#main figure.main-fig {
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;

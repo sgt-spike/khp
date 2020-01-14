@@ -44,7 +44,7 @@
             $row = mysqli_fetch_array($story);
             echo "</div><br><div class=\"story-h1\"><h1>{$row['name']}</h1></div>
             <div class=\"story-article\">
-               <article>" . mysqli_real_escape_string($dbc, $row['story']) . "</article>";
+               <article>" . $row['story'] . "</article>";
          } else {
             echo '<p class="error">Could not retrieve the data because: ' . mysqli_error($dbc) . '</p>';
       } 

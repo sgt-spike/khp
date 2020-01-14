@@ -4,8 +4,12 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <meta name="description" content="Supporting Alaskan families impacted by childhood cancer">
+   <meta name="keywords" content="katieshandprint.org,Katie's Handprint,Childhood Cancer,Alaska,Helping Families,Non-profit">
    <link rel="stylesheet" href="css/main.css">
    <link rel="stylesheet" href="css/mobile.css">
+   <link rel="icon" type="image/png" sizes="16x16" href="img/FC+KH-01.png">
+   <link rel="apple-touch-icon" sizes="57x57" href="img/FC+KH-01.png">
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
    <!-- need to show handprint icon on tab -->

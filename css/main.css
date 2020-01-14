@@ -255,7 +255,7 @@ main.container-main .stories-ul a:nth-child(even) {
 main.container-main .stories-ul a {
   text-decoration: none;
   cursor: pointer;
-  cursor-padding: 25px;
+  padding: 25px;
 }
 
 main.container-main .stories-ul a li.gallery {
