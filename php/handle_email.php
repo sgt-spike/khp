@@ -33,7 +33,7 @@
             $mail->Password = $mail_pass;
             // Recipients
             $mail->setFrom($email, $name);
-            $mail->addAddress("btchriss@gmail.com", "Katie's Handprint");
+            $mail->addAddress("darlis@katieshandprint.org", "Katie's Handprint");
             // Message Content 
             $mail->Subject = $subject;
             $mail->Body = $message; // remove if you do not want to send HTML email

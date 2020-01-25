@@ -1,409 +1,614 @@
 @import url('https://fonts.googleapis.com/css?family=Alice')
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower')
-@import '_variables'
-@import '_mixins'
-@import '_mobileFirst'
 
-/* Site Styling*/
+@import './variables'
+@import './mixins'
+@import './mobileFirst'
+
+
+
+// Site Styling
+*, *::before, * ::after
+   box-sizing: inherit
 html
    font-size: 62.5%
+   box-sizing: border-box
+   body
+      margin: 0
+      padding: 0
+      div#page-content
+         min-height: 100vh
+         display: grid
+         grid-template-rows: auto 1fr auto
+         header#header
+            grid-row:  1
+         main#main
+            grid-row:  2
+            display: grid
+            grid-template-columns: repeat(12, minmax(100px, 1fr))
+            grid-template-rows: auto
+         footer#footer
+            grid-row:  3
+         nav#sidebar
+            grid-column: 1
+            grid-row: 1/-1
 
-/* Header Section Styling*/
-nav.sidebar
-   display: none
-
-header#header
-   font-family: 'Indie Flower', cursive
-   background: $khp-purple
-   border: none
-   height: 175px
-
-   .hcontainer
-      height: inherit
-      width: inherit
-      display: grid
-      grid-column: 1/13
-      align-items: center
-
-      img#logo
-         max-width: 142px
-         grid-column: 2
-         @include justify-align-self_center
-
-      ul#nav
-         grid-column: 3/9
-         @include justify-align-self_center
-
-         li.nav-item
-            cursor: pointer
-            display: inline-flex
-            align-items: center
-            justify-content: space-around
-            font-size: 2.5rem
-            font-weight: map-get($font-weight, regular)
-            text-transform: capitalize
-            text-align: center
-            a.active
+/* Header Section Styling */
+/* Styling for mobile side nav */
+div#page-content
+   nav.sidebar
+      display: none
+      @include mobile
+         font-family: 'Indie Flower', cursive
+         display: initial
+         height: 100%
+         width: 0
+         position: fixed
+         z-index: 1
+         top: 0
+         left: 0
+         background-color: $khp_purple
+         overflow-x: hidden
+         padding-top: 60px
+         transition: .5s
+         ul.nav-sidebar
+            list-style: none
+            margin: 0
+            padding: 0
+            a.closebtn
+               position: absolute
+               top: 0
+               right: 25px
+               font-size: 3.6rem
+               margin-left: 50px
                color: $khp_green
-               text-decoration: underline
-            a.nav-item-a
                text-decoration: none
-               color: $khp_textwhite                 
-               &:hover
+            li.nav-sidebar-item
+               padding: 8px 8px 8px 32px
+               text-decoration: none
+               cursor: pointer
+               font-size: 2.5rem
+               font-weight: map-get($font-weight, regular)
+               text-transform: capitalize
+               text-align: left
+               a.active
                   color: $khp_green
-                  transition-property: color
-                  transition-duration: 200ms, 200ms
-                  transition-timing-function: ease-in-out, ease-in-out
-                  transition-delay: 0s, 0s
-               &#contact
+                  text-decoration: underline
+               a.nav-sidebar-item-a
+                  text-decoration: none
+                  color: $khp-textwhite
+                  &:hover
+                     color: $khp_green
+                     transition-property: color
+                     transition-duration: 200ms, 200ms
+                     transition-timing-function: ease-in-out, ease-in-out
+                     transition-delay: 0s, 0s
+                  &#contact
+                     border: solid 2px $khp_green
+                     border-radius: 50px
+                     text-align: center
+                     padding: 5px 15px
+                     color: $khp_green
+                     &:hover
+                        background: $khp_green
+                        color: $khp_textwhite
+                        transition-property: color, background-color
+                        transition-duration: 200ms, 200ms
+                        transition-timing-function: ease-in-out, ease-in-out
+                        transition-delay: 0s, 0s
+/* Styling for desktop header/nav */                        
+div#page-content
+   header
+      @include mobile
+         width: 100%
+   header#header
+      font-family: 'Indie Flower', cursive
+      background: $khp-purple
+      border: none
+      height: 175px
+      .hcontainer
+         height: inherit
+         display: grid
+         grid-template-columns: repeat(8, 1fr)
+         img#logo
+            max-width: 142px
+            grid-column: 2
+            border-radius: 10px
+            @include justify-align-self_center
+            @include mobile
+               grid-column: 1/-1
+               grid-row: 1
+         ul#nav
+            grid-column: 4/-1
+            justify-self: center
+            @include mobile
+               display: none
+            li.nav-item
+               cursor: pointer
+               display: inline-flex
+               align-items: center
+               justify-content: space-around
+               font-size: 2.5rem
+               font-weight: map-get($font-weight, regular)
+               text-transform: capitalize
+               text-align: center
+               a.active
+                  color: $khp_green
+                  text-decoration: underline
+               a.nav-item-a
+                  text-decoration: none
+                  color: $khp_textwhite                 
+                  &:hover
+                     color: $khp_green
+                     transition-property: color
+                     transition-duration: 200ms, 200ms
+                     transition-timing-function: ease-in-out, ease-in-out
+                     transition-delay: 0s, 0s
+                  &#contact
+                     border: solid 2px $khp_green
+                     border-radius: 50px
+                     text-align: center
+                     padding: 5px 15px
+                     color: $khp_green
+                     &:hover
+                        background: $khp_green
+                        color: $khp_textwhite
+                        transition-property: color, background-color
+                        transition-duration: 200ms, 200ms
+                        transition-timing-function: ease-in-out, ease-in-out
+                        transition-delay: 0s, 0s
+               a#contact.active
+                  background: $khp_green
+                  color: $khp_textwhite
                   border: solid 2px $khp_green
                   border-radius: 50px
                   text-align: center
                   padding: 5px 15px
+               div#sub-div
+                  margin-left: 15px
+               span.divide
                   color: $khp_green
-                  &:hover
-                     background: $khp_green
-                     color: $khp_textwhite
-                     transition-property: color, background-color
-                     transition-duration: 200ms, 200ms
-                     transition-timing-function: ease-in-out, ease-in-out
-                     transition-delay: 0s, 0s
-            a#contact.active
-               background: $khp_green
-               color: $khp_textwhite
-               border: solid 2px $khp_green
-               border-radius: 50px
-               text-align: center
-               padding: 5px 15px
-
-            div#sub-div
-               margin-left: 15px
-
-            span.divide
+                  font-size: 3.5rem
+                  padding: 0 10px
+         button.openbtn
+            display: none
+            @include mobile
+               display: initial
+               grid-column: 1/2
+               grid-row: 1/2
+               @include justify-align-self_center-start
+               margin-top: 15px
+               border: none
+               background: none
                color: $khp_green
-               font-size: 3.5rem
-               padding: 0 10px
-
-      button.openbtn
-         display: none
+               font-size: 3rem
    
-
-/* Index page styling*/
-main.container-main
-   display: grid
-   font-family: 'Alice', serif
-   color: $khp_purple
-   div.div-arrow
-      grid-row: 1/2
-      grid-column: 1/13
-      background: $khp_purple
-      a#arrow
-         font-size: 1.5rem
-         color: $khp_green
-         text-decoration: none
-   h1.main-h1
-      grid-row: 1/2
-      grid-column: 1/13
-      @include justify-align-self_center
-      text-shadow: 2px 2px 4px $khp_purple
-      font-size: 3rem
-      text-align: center
-      padding: 25px
-   #main-heading, #main-heading-mobile
-      grid-row: 1
-      grid-column: 1 / 13
-      @include justify-align-self_center
-   #main-heading-mobile
-      display: none
-   .main-fig
-      grid-row: 2/8
-      grid-column: 3/7
-      margin: 0
-      padding: 0
-      text-align: center
-      font-size: 2rem
-   img#main-img
-      width: 75%
-      height: auto
-   #main-art
-      grid-row: 2 / 8
-      grid-column: 7 / 11
-      margin: 0
-      padding: 0
-   #main-art p
-      font-size: 2.5rem
-      line-height: 1.8em
-      margin: inherit
-      padding: 0 25px
+/* Index page styling */
+div#page-content
+   main.container-main
+      //min-height: 100vh
+      font-family: 'Alice', serif
+      color: $khp_purple
+      padding-bottom: 5px
+      h1.main-h1
+         grid-row: 1
+         grid-column: 1/-1
+         @include justify-align-self_center
+         text-shadow: 2px 2px 4px $khp_purple
+         font-size: 4rem
+         text-align: center
+         padding: 25px
+         //max-height: 10vh
+         @include mobile
+            margin: 0
+      img.khp-img
+         border-radius: $img-border-radius
+      div#contact
+         grid-column: 3/11
+         grid-row: 2/12
+      div#login
+         grid-column: 2/12
+         grid-row: 2/12
+         justify-self: center
+      div#pw-update
+         grid-row: auto
+         grid-column: 4/span 4
+      div.khp-form
+         background: $khp_green
+         border: 2px solid $khp_purple
+         border-radius: 5px
+         min-width: 50%
+         margin: 25px
+         @include mobile
+            width: 100%
+         div.form-heading
+            display: initial
+            font-size: 2.5rem
+            text-align: center
+            font-weight: bold
+         div.form-errors
+            max-width: 90%
+            margin: auto
+            font-size: 2rem
+            font-weight: bold
+            p.error
+               color: red
+            p.success
+               color: $khp_purple
+         form
+            margin: 50px auto 25px auto
+            max-width: 90%
+            @include mobile
+               width: 100%
+            div.form-group
+               margin: 25px
+               label
+                  font-weight: 700
+                  font-size: 1.5rem
+               label.validate
+                  input.validate
+                     width: 25px
+                     border-radius: 5px
+                     text-align: center
+            button.btn
+                  background: $khp_purple
+                  border: $khp_purple
+                  color: $khp_purewhite
+                  margin-bottom: 10px
+                  width: 10rem
+                  font-size: 1.5rem
+      div.div-arrow
+         grid-row: 1/2
+         grid-column: 1/-1
+         max-height: 25px
+         background: $khp_purple
+         a#arrow
+            font-size: 1.5rem
+            color: $khp_green
+            text-decoration: none
+      .main-fig
+         grid-row: 2/-1
+         grid-column: 2/6
+         margin: 0
+         padding: 0
+         text-align: center
+         font-size: 2rem
+         @include mobile
+            grid-row: 2/4
+            grid-column: 1/11
+            font-size: 2rem
+         img#main-img
+            max-width: 75%
+            height: auto
+            @include mobile
+               width: 50%   
+      #main-art
+         grid-row: 2/-1
+         grid-column: 6/11
+         margin: 0
+         padding: 0
+         @include mobile
+            grid-row: 4/11 
+            grid-column: 1/11
+            padding: 10px
+         p
+            font-size: 2.5rem
+            line-height: 1.8em
+            margin: inherit
+            padding: 0 25px
+            @include mobile
+               font-size: 2rem
+               margin: inherit
+               padding: inherit
 
 /* Styling for Family Stories Page */
-main.container-main
-   .stories-ul
-      grid-row: 2/8
-      @include justify-align-self_center
-      padding: 0 50px
-      p.error
-         color: red
-         font-size: 3rem
-         font-weight: 700
-      a:nth-child(even)
-         padding: 25px
-      a
-         text-decoration: none
-         cursor: pointer
-         padding: 25px
-         li.gallery 
-            display: flex
-            justify-content: space-around
-            margin: 5px
-            border: 1px solid #ccc
-            border-radius: 5px
+div#page-content
+   main.container-main      
+      ul.stories-ul
+         grid-column: 2/12
+         grid-row: 2/-1
+         display: flex
+         flex-flow: column nowrap
+         align-items: center
+         list-style-type: none
+         margin: 0
+         padding: 0
+         li.gallery
             background: $khp_purple
-            text-decoration: none
-            color: $khp_green
-            font-size: 2rem
-            list-style: none
-            &:hover
-               border: 1px solid #777
+            border-radius: 5px
+            margin: 25px
+            a
+               display: flex
+               justify-content: space-around
+               text-decoration: none
                cursor: pointer
-            .img-main
-               width: 15%
-               height: 25%
-               padding: 25px
-               align-self: center
-            div.desc
-               align-self: center
-               h2
-                  margin: 0 0 25px 0
-                  text-align: center
-               p
-                  text-align: left
-                  font-size: 2rem
-                  margin: 0
-                  padding-right: 10px
-   div.slideshow-container
-      grid-row: 2/3
-      grid-column: 1/13
-      max-width: 50%
-      position: relative
-      margin: auto
-      padding: 25px
-      div.mySlides
-         display: none
-         img
-            margin: auto
-            height: 100%
-            width: 100%
-      .prev, .next
-         cursor: pointer
-         position: absolute
-         top: 50%
-         width: auto
-         margin-top: -22px
-         padding: 16px
-         color: $khp_purewhite
-         font-weight: bold
-         font-size: 18px
-         transition: 0.6s ease
-         border-radius: 0 3px 3px 0
-         user-select: none
-      .next
-         right: 20px
-         border-radius: 3px 0 0 3px
-   div.dot-group
-      grid-row: 3/5
-      grid-column: 1/13
-      text-align: center
-      span.dot
-         cursor: pointer
-         height: 15px
-         width: 15px
-         margin: 0 2px
-         background-color: $khp_green
-         border-radius: 50%
-         display: inline-block
-         transition: background-color 0.6s ease
-         .active, .dot:hover
-            background-color: #717171
-   div.story-h1
-      grid-row: 5/6
-      grid-column: 1/13
-      text-align: center
-      h1
-         font-weight: bolder
-   div.story-article
-      grid-row: 6/13
-      @include justify-align-self_start
-      font-size: 2rem
-      padding: 25px 100px
+               color: $khp_green
+               @include mobile
+                  flex-direction: column
+               img.img-main
+                  display: block
+                  //border-radius: $img-border-radius
+                  margin: 10px
+                  width: 15%
+                  height: 15%
+                  @include mobile
+                     margin: 10px auto
+                     width: 50%
+                     height: 50%
+               div.desc
+                  padding: 25px
+                  h2
+                     text-align: center
+                     font-size: 3rem
+                  p
+                     font-size: 2rem
+/* Style for individual story page */
+div#page-content
+   main.container-main      
+      div.slideshow-container
+         grid-row: 2/5
+         grid-column: 2/12
+         max-width: 50%
+         max-height: 50%
+         position: relative
+         margin: 0
+         justify-self: center
+         padding: 25px
+         @include mobile
+            max-width: 75%
+         div.mySlides
+            display: none
+            img
+               margin: auto
+               height: 50%
+               width: 50%
+         .prev, .next
+            cursor: pointer
+            position: absolute
+            top: 50%
+            width: auto
+            margin-top: -22px
+            padding: 16px
+            color: $khp_purewhite
+            font-weight: bold
+            font-size: 18px
+            transition: 0.6s ease
+            border-radius: 0 3px 3px 0
+            user-select: none
+         .next
+            right: 20px
+            border-radius: 3px 0 0 3px
+      div.dot-group
+         grid-row: 4/5
+         grid-column: 1/-1
+         text-align: center
+         span.dot
+            cursor: pointer
+            height: 15px
+            width: 15px
+            margin: 0 2px
+            background-color: $khp_green
+            border-radius: 50%
+            display: inline-block
+            transition: background-color 0.6s ease
+            .active, .dot:hover
+               background-color: #717171
+      div.story-h1
+         grid-row: 5/6
+         grid-column: 2/12
+         text-align: center
+         h1
+            font-weight: bolder
+      div.story-article
+         grid-row: 6/12
+         grid-column: 2/12
+         @include justify-align-self_start
+         font-size: 2rem
+         padding: 25px 100px
+         @include mobile
+            padding: 50px
 
 /* Styling for Events page */
-main.container-main
-   div.events-all
-      text-align: center
+div#page-content
+   main.container-main
+      div.events-all
+         text-align: center
+         grid-row: 2/-1
+         grid-column: 2/11
+         div.current-event
+            
 
-/* Styling for WhoWeAre main page */
-main.container-main
-   div#board
-      grid-row: 2/5
-      grid-column: 3/11
-      display: flex
-      flex-flow: row wrap
-      justify-content: space-around
-      a
-         div.gallery
-            margin: 5px
-            border: 1px solid #ccc
-            float: left
-            width: 200px
-            height: 350px
-            border-radius: 5px
-            background: $khp_purple
-            text-decoration: none
-            color: $khp_green
-            font-size: 2rem
-            &:hover
-               border: 1px solid #777
-               cursor: pointer
-            img
-               width: 100%
-               height: auto
-            div.desc
-               padding: 15px
-               text-align: center
-   div.container-art
-      grid-row: 2/6
-      grid-column: 1/13
-      display: grid
-      grid: 100% / repeat(2,50%)
-      div.div-img
-         grid-column: 1/2
-         img.whoweare-img
-            display: block
-            margin: auto
-            height: auto
-            max-width: 75%
-            padding: 25px
-      div.div-art
-         grid-column: 2/3
-         padding: 25px
-         h2.whoweare-h2
+/* Styling for WhoWeAre main page *///I
+div#page-content
+   main.container-main
+      div.board-group
+         grid-column: 2/12
+         display: inline-flex
+         flex-flow: column nowrap
+         justify-content: center
+         @include mobile
+            display: flex
+            flex-flow: column nowrap
+         ul.board-list
+            display: inline-flex
+            justify-content: space-evenly
+            list-style-type: none
+            margin: 0
+            padding: 0 0 15px 0
+            @include mobile
+               display: flex
+               flex-direction: column
+               align-items: center
+            li.list-item
+               width: 200px
+               height: 350px
+               margin: 25px
+               border: 1px solid #ccc
+               border-radius: 5px
+               background: $khp_purple
+               a
+                  text-decoration: none
+                  color: $khp_green
+                  font-size: 2rem
+                  &:hover
+                     border: 1px solid #777
+                     cursor: pointer
+                  div.gallery
+                     div.img img
+                        width: 100%
+                        height: auto
+                     div.desc
+                        padding: 15px
+                        text-align: center
+      div div.board-h2
+         text-align: center
+         h2
             font-size: 3rem
-            font-weight: bolder
-            padding-bottom: 10px
-            text-align: center
-         article.whoweare-art
-            font-size: 2rem
-            p
+      div#exe-board
+         grid-row: 2/4
+      div#gen-board
+         grid-row: 6/8
+
+/* Style for Individual Board Members */
+div#page-content
+   main.container-main       
+      div.container-art
+         grid-row: 2/6
+         grid-column: 1/11
+         display: grid
+         grid: 100% / repeat(2,50%)
+         @include mobile
+            display: flex
+            flex-flow: column nowrap
+            justify-items: center
+         div.div-img
+            grid-column: 1/2
+            @include mobile
+               width: 100vw
+            img.whoweare-img
+               display: block
+               margin: auto
+               height: auto
+               max-width: 75%
+               padding: 25px
+         div.div-art
+            grid-column: 2/3
+            padding: 25px
+            @include mobile
+               margin: 0
+            h2.whoweare-h2
+               font-size: 3rem
+               font-weight: bolder
+               padding-bottom: 10px
+               text-align: center
+               @include mobile
+                  font-size: 3rem
+                  padding: 10px
+            article.whoweare-art
                font-size: 2rem
+               @include mobile
+                  padding: 10px
+               p
+                  font-size: 2rem
+                  @include mobile
+                     padding: 10px
 
 /* Styling for sponsor page */
-main.container-main
-   div.img-container
-      grid-row: 2/5
-      grid-column: 1/13
-      div.img-group
-         display: flex
-         flex-flow: row wrap
-         justify-content: center
-         align-items: center
-         img
-            height: 15%
-            width: 15%
-            margin: 15px
-      div.mobile-img-group
-         display: none
-/* Styling for Contact page */
-main.contact-container
-   font-family: 'Alice', serif
-   font-size: 1.5rem
-   margin-bottom: 87px
-   //box-sizing: border-box
-   h1#contact-h1
-      font-size: 4rem
-      text-align: center
-      color: $khp_purple
-   div#contact-form
-      background: $khp_green
-      border: 2px solid $khp_purple
-      border-radius: 5px
-      height: 75%
-      width: 75%
-      margin: auto
-      div#form-heading
-         display: initial
-         font-size: 2.5rem
-         text-align: center
-         font-weight: bold
-      div#form-errors
-         width: 50%
-         margin: auto
-         font-size: 2rem
-         font-weight: bold
-         p.error
-            color: red
-         p.success
-            color: $khp_purple
-      form
-         margin: auto
-         max-width: 90%
-         div.form-group
-            label
-               font-weight: 700
-            label.validate
-               input.validate
-                  width: 25px
-                  border-radius: 5px
-                  text-align: center
-         button.btn
-               background: $khp_purple
-               border: $khp_purple
-               color: $khp_purewhite
-               margin-bottom: 10px
-               width: 10rem
+div#page-content
+   main.container-main   
+      div.img-container
+         grid-row: 2/-1
+         grid-column: 2/12
+         div.img-group
+            display: flex
+            flex-flow: row wrap
+            justify-content: center
+            align-items: center
+            @include mobile
+               flex-flow: column nowrap
+            img
+               height: 15%
+               width: 15%
+               margin: 25px
+               @include mobile
+                  height: 30%
+                  width:  30%
 
-/* Styling for Footer */
-footer
-   width: 100%
-   &#footer
-      display: grid
-      background: $khp_purple
-      color: $khp_purewhite
-      border-top: solid $khp_green 5px
-   div
-      &#address
-         grid-column: 2 / 4
-         grid-row: 2/3
-         @include justify-align-self_center-end
-         //margin-left: 70px
-         font-size: 1.6rem
-   div
-      &#social
-         grid-column: 1 / 9
-         grid-row: 1/2
-         @include justify-align-self_center
-         margin: 5rem
-
-         .fab
-            letter-spacing: 5px
-            font-size: 48px
-            color: $khp_purewhite
-
-   div
-      &#dev
-         grid-column: 4 / 6
-         grid-row: 2/3
-         @include justify-align-self_center-end
-         a
-            color: $khp_purewhite
+div#page-content
+   main.container-main   
+      div.donate
+         grid-row: 2/-1
+         grid-column: 2/12
+   
+   // Styling for Footer
+div#page-content
+   footer
+      width: 100%
+      &#footer
+         display: grid
+         background: $khp_purple
+         color: $khp_purewhite
+         border-top: solid $khp_green 5px
+      div
+         &#address
+            grid-column: 2 / 4
+            grid-row: 2/3
+            @include justify-align-self_center-end
+            //margin-left: 70px
             font-size: 1.6rem
+      div
+         &#social
+            grid-column: 1 / 9
+            grid-row: 1/2
+            @include justify-align-self_center
+            margin: 5rem
 
-   div
-      &#copy
-         grid-row: 2/3
-         grid-column: 7
-         @include justify-align-self_start-end
-         font-size: 1.6rem
+            .fab
+               letter-spacing: 5px
+               font-size: 48px
+               color: $khp_purewhite
+
+      div
+         &#dev
+            grid-column: 4 / 6
+            grid-row: 2/3
+            @include justify-align-self_center-end
+            a
+               color: $khp_purewhite
+               font-size: 1.6rem
+
+      div
+         &#copy
+            grid-row: 2/3
+            grid-column: 7
+            @include justify-align-self_start-end
+            font-size: 1.6rem
+            a
+               text-decoration: none
+               cursor: default
+               color: $khp_purewhite
+      @include mobile
+         div
+            &#social, &#address, &#copy, &#dev
+               @include justify-align-self_center
+            &#social
+               margin: 1rem
+               .fab
+                  font-size: 3rem
+            
+            &#address
+               grid-column: 1 / 9
+               grid-row: 2 / 4
+
+            &#copy
+               grid-column: 1 / 9
+               grid-row: 4 / 5
+
+            &#dev
+               grid-column: 1 / 9
+               grid-row: 5 / 6
+            
+
 
 
 

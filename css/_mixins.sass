@@ -26,3 +26,10 @@
    justify-self: start
    align-self: center
 
+@mixin khp-grid-gap
+   grid-gap: 20px
+
+@mixin mobile
+   @media screen and (max-width: $mobile)
+      @content
+
