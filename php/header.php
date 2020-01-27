@@ -14,8 +14,8 @@
    <title><?php if(defined('TITLE')){ echo TITLE;} else { "Katie's Handprint";} ?></title>
 </head>
 <body>
-   <div class="wrapper">
-      <nav class="mobile">
+   <div class="wrapper" id="wrapper">
+      <nav class="mobile" id="sidebar">
          <ul id="nav-sidebar" class="nav-sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fas fa-times"></i></a>
             <li class="nav-sidebar-item" >

@@ -9,7 +9,8 @@
    echo '<section class="content-header">
             <header>
                <h1 class="main-h1">Events</h1>
-            </header></section>
+            </header>
+         </section>
          <section class="content events"> 
             <div class="event current-event">
                <header class="event-h2">

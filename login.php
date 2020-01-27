@@ -92,8 +92,6 @@
       <div class="form-group">
          <button type="submit" name="submit" value="Login" class="btn btn-lg">Login</button>
       </div>';
-      
-   
    }
    echo '</form></div></section>';
    include $khp_footer;

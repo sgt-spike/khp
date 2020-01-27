@@ -15,7 +15,7 @@
          
          $query = 'SELECT story_id, name, thumbnail, splash FROM stories_online ORDER BY story_id ASC';
 
-         echo '<section class="content-header"><header><h1 class="main-h1">Stories of our Amazing People</h1></header></section><section class="content families">
+         echo '<section class="content-header"><header><h1 class="main-h1">Stories of our Amazing People</h1></header></section><section id="content" class="content families">
          <ul class="stories-ul">';
 
          if ($result = mysqli_query($dbc, $query)) {
@@ -32,7 +32,16 @@
          $query_story = "SELECT story_id, name, story FROM stories_online WHERE story_id = {$_GET['id']}";
          $query_photos = "SELECT * FROM photos WHERE story_id = {$_GET['id']}";
 
-         echo '<section class="content-header"><header><div class="div-arrow"><a id="arrow" href="familystories.php?page=Gallery"><i class="fas fa-arrow-circle-left">  THE FAMILIES</i></a></div></header></section><section class="content individual"><div class="slideshow-container">';
+         echo '<section class="content-header">
+                  <header>
+                     <div class="div-arrow">
+                        <a id="arrow" href="familystories.php?page=Gallery">
+                           <i class="fas fa-arrow-circle-left">  THE FAMILIES</i>
+                        </a>
+                     </div>
+                  </header>
+               </section>
+               <section class="content individual"><div class="slideshow-container">';
          if (($story = mysqli_query($dbc, $query_story)) && ($photos = mysqli_query($dbc, $query_photos))) {
             
             while ($row = mysqli_fetch_array($photos)) {

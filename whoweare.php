@@ -9,7 +9,13 @@
 
       if ($_GET['page'] == 'Board') {
 
-         echo '<section class="content-header"><header><h1 class="main-h1">The Board</h1></header></section><section class="content board">';
+         echo '<section class="content-header">
+                  <header>
+                     <h1 class="main-h1">The Board
+                     </h1>
+                  </header>
+               </section>
+               <section class="content board">';
       
          $exe_board = 'SELECT * FROM board WHERE board_type = 1';
          $gen_board = 'SELECT * FROM board WHERE board_type = 2';
@@ -55,10 +61,19 @@
          $query = 'SELECT * FROM board WHERE board_member_id = ' . $_GET['id']; 
 
          if ($result = mysqli_query($dbc, $query)) {
-            echo '<div class="div-arrow"><a id="arrow" href="whoweare.php?page=Board" target="_self"><i class="fas fa-angle-double-left">THE BOARD</i></a></div><div class="container-art">';
+            echo '<section class="content-header">
+                     <header>
+                        <div class="div-arrow">
+                           <a id="arrow" href="whoweare.php?page=Board">
+                              <i class="fas fa-arrow-circle-left">  THE BOARD</i>
+                           </a>
+                        </div>
+                     </header>
+                  </section>
+                  <section class="content member">';
          
             while ($row = mysqli_fetch_array($result)) {
-               echo "<div class=\"div-img\"><img src=\"{$row['thumbnail']}\" class=\"khp-img whoweare-img\" alt=\"{$row['position']}\"></div><div class=\"div-art\"><h2 class=\"whoweare-h2\">{$row['name']} - {$row['position']}</h2><article class=\"whoweare-art\">{$row['bio']}<br><br>Should you have any questions, ideas, comments, concerns, or want to volunteer, please contact me at ";
+               echo "<div class=\"div-img\"><img src=\"{$row['thumbnail']}\" class=\"khp-img whoweare-img\" alt=\"{$row['position']}\"></div><header><h2 class=\"whoweare-h2\">{$row['name']} - {$row['position']}</h2></header><div class=\"whoweare-art\"><p>{$row['bio']}<br><br>Should you have any questions, ideas, comments, concerns, or want to volunteer, please contact me at ";
                if ($row['phone'] != "") {
                   echo "Phone: {$row['phone']} or Email: <a href=\"mailto:{$row['email']}\">{$row['email']}</a>";
                } else {
@@ -66,7 +81,7 @@
                }
             }
          }
-         echo '</article></div></div>';
+         echo '</p></div>';
    
       }
 

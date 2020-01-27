@@ -11,7 +11,7 @@
       <h1>Supporting Alaskan Families Impacted by Childhood Cancer</h1>
    </header>
 </section>
-<section class="content main-page">
+<section class="content main-page" id="content">
    <figure class="main-fig">
       <img id="main-img" class="khp-img" src="img/Katie.jpg" alt="Beautiful Katie">
       <figcaption>The Beautiful Katie</figcaption>

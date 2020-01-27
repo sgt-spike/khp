@@ -15,7 +15,11 @@
             div.wrapper {
                 display: grid;
                 grid-template-rows: $minmax-content $minmax-content $minmax-content;
+                grid-template-areas: "header" "content" "footer";
                 grid-gap: 20px;
+                @include mobile {
+                    max-width: 100vw;
+                }
             }
             
             nav.mobile {
@@ -23,17 +27,89 @@
                 @include mobile {
                     display: grid;
                     grid-gap: 20px;
+                    font-family: 'Indie Flower', cursive;
+                    width: 0;
+                    height: 100vh;
+                    position: fixed;
+                    z-index: 1;
+                    top: 0;
+                    left: 0;
+                    background-color: $khp_purple;
+                    overflow-x: hidden;
+                    padding-top: 60px;
+                    transition: .5s;
+                    ul.nav-sidebar {
+                        list-style: none;
+                        margin: 0;
+                        padding: 0;
+                        a.closebtn {
+                            position: absolute;
+                            top: 0;
+                            right: 25px;
+                            font-size: 3.6rem;
+                            margin-left: 50px;
+                            color: $khp_green;
+                            text-decoration: none;
+                        }
+                        li.nav-sidebar-item {
+                            padding: 8px 8px 8px 32px;
+                            text-decoration: none;
+                            cursor: pointer;
+                            font-size: 2.5rem;
+                            font-weight: map-get($font-weight, regular);
+                            text-transform: capitalize;
+                            text-align: left;
+                            a.active {
+                                color: $khp_green;
+                                text-decoration: underline;
+                            }
+                            a.nav-sidebar-item-a {
+                                text-decoration: none;
+                                color: $khp-textwhite;
+                                &:hover {
+                                    color: $khp_green;
+                                    transition-property: color;
+                                    transition-duration: 200ms, 200ms;
+                                    transition-timing-function: ease-in-out, ease-in-out;
+                                    transition-delay: 0s, 0s;
+                                }
+                            }
+                            div#sidebar-sub-div {
+                                border: solid 2px $khp_green;
+                                border-radius: 50px;
+                                text-align: center;
+                                padding: 5px 15px;
+                                color: $khp_green;
+                                &:hover {
+                                    background: $khp_green;
+                                    color: $khp_textwhite;
+                                    transition-property: color, background-color;
+                                    transition-duration: 200ms, 200ms;
+                                    transition-timing-function: ease-in-out, ease-in-out;
+                                    transition-delay: 0s, 0s;
+                                }
+                                a.active {
+                                    background: $khp_green;
+                                    color: $khp_textwhite;
+                                }
+                            }
+                        }
+                    }
                 }
             }
             
             section.header {
                 grid-row: 1;
+                grid-area: header;
                 display: grid;
                 grid-template-columns: 1fr 2fr;
                 font-family: 'Indie Flower', cursive;
                 background-color: $khp_purple;
                 align-items: center;
                 justify-items: center;
+                @include mobile {
+                    grid-template-columns: $minmax-content
+                }
                 header.logo {
                     grid-column: 1;
                     margin: 25px 0;
@@ -48,6 +124,7 @@
                     }
                     @include mobile {
                         grid-column: 1/-1;
+                        width: 100vw;
                         button.openbtn {
                             display: initial;
                             justify-self: start;
@@ -128,41 +205,35 @@
             } //end of header
             main.main-content {
                 grid-row: 2;
+                grid-area: content;
                 display: grid;
                 grid-template-columns: 150px 1fr 150px;
                 grid-template-rows: $minmax-content $minmax-content;
                 grid-template-areas: '. header .' '. content .';
-                grid-auto-flow: row dense;
                 @include khp_grid_gap;
                 justify-items: center;
                 font-family: 'Alice', serif;
                 color: $khp_purple;
-                section.content-header {
-                    grid-area: header;
-                    grid-row: 1;
-                    header h1 {
-                        text-shadow: 2px 2px 4px $khp_purple;
-                        font-size: 4rem;
-                        text-align: center;
-                    }
-                    header div.div-arrow {
-                        font-size: 2rem;
-                        color: $khp_green;
-                    }
-                }
-                section.content {
-                    grid-area: content;
-                    grid-row: 2;
+                @include mobile {
+                    grid-template-columns: 20px 1fr 20px;
+                    grid-gap: 0;
+                    grid-row-gap: 20px;
                 }
                 section.main-page {
                     display: grid;
                     grid-template-columns: $minmax-content $minmax-content;
-                    grid-auto-flow: column dense;
                     grid-gap: 20px;
+                    @include mobile {
+                        grid-template-rows: $minmax-content $minmax-content;
+                        grid-template-areas: "figure" "article";
+                    }
                     figure.main-fig {
                         grid-column: 1;
                         text-align: center;
                         font-size: 2rem;
+                        @include mobile {
+                            grid-area: figure;
+                        }
                         img {
                             max-width: 75%;
                             height: auto;
@@ -173,6 +244,9 @@
                         grid-column: 2;
                         font-size: 2.5rem;
                         line-height: 1.8em;
+                        @include mobile {
+                            grid-area: article;
+                        }
                     }
                 }
                 section.families {
@@ -229,8 +303,8 @@
                     justify-items: center;
                     div.slideshow-container {
                         grid-area: slideshow;
-                        max-width: 100%;
-                        max-height: 100%;
+                        // max-width: 100vw;
+                        // max-height: 100vh;
                         position: relative;
                         margin: 0;
                         div.mySlides {
@@ -293,6 +367,9 @@
                             margin: 0 200px;
                             font-size: 2rem;
                             line-height: 3rem;
+                            @include mobile {
+                                margin: 0;
+                            }
                         }
                     }
                 }
@@ -300,20 +377,12 @@
                     display: grid;
                     grid-template-columns: 1fr 1fr;
                     grid-template-rows: repeat(auto, 1fr);
-                    grid-auto-flow: column;
                     @include khp-grid-gap;
-                    div.event {
-                        display: grid;
-                        grid-template-rows: $minmax-content $minmax-content;
-                        grid-template-areas: 'event-header' 'event';
-                        @include khp-grid-gap;
-                        justify-items: center;
-                        header {
-                            grid-area: event-header;
-                            h2 {
-                                font-size: 3rem;
-                            }
-                        }
+                    @include mobile {
+                        grid-template-columns: min-content;
+                        grid-template-rows: repeat(auto, $minmax-content);
+                        grid-gap: 0;
+                        grid-row-gap: 20px;
                     }
                     div.current-event {
                         grid-column: 1;
@@ -324,13 +393,34 @@
                         div {
                             grid-area: event;
                             display: grid;
-                            grid-template-columns: 1fr 1fr 1fr 1fr;
+                            grid-template-columns: $minmax-content $minmax-content $minmax-content $minmax-content;
                             grid-auto-flow: dense;
-                            background-color: $khp-green;
+                            background-color: rgba(32, 182, 47, 0.8);
                             border: 2px solid $khp_purple;
+                            @include mobile {
+                                grid-template-columns: $minmax-content $minmax-content;
+                            }
                             img {
                                 width: 15rem;
                                 border: 2px solid $khp_purple;
+                            }
+                        }
+                    }
+                    div.event {
+                        display: grid;
+                        grid-template-rows: $minmax-content $minmax-content;
+                        grid-template-areas: 'event-header' 'event';
+                        @include khp-grid-gap;
+                        justify-items: center;
+                        @include mobile {
+                            grid-column: 1/-1;
+                            grid-row: repeat(auto, $minmax-content);
+                        }
+                        header {
+                            grid-area: event-header;
+                            h2 {
+                                font-size: 3rem;
+                                text-align: center;
                             }
                         }
                     }
@@ -363,6 +453,9 @@
                             grid-auto-flow: column;
                             list-style-type: none;
                             padding: 0;
+                            @include mobile {
+                                grid-auto-flow: row;
+                            }
                             li.list-item {
                                 width: 200px;
                                 height: 350px;
@@ -392,6 +485,34 @@
                             }
                         }
                     }
+                }
+                section.member {
+                    display: grid;
+                    grid-template-rows: $minmax-content $minmax-content $minmax-content;
+                    justify-items: center;
+                    div.div-img {
+                        border: 5px $khp-green groove;
+                        border-radius: 5px;
+                        img {
+                            width: 30vw;
+                            height: auto;
+                            padding: 3px;
+                            border-radius: 5px;
+                            @include mobile {
+                                width: 80vw;
+                            }
+                        }
+                    }
+                    header h2 {
+                        font-size: 3rem;
+                        font-weight: 700;
+                        text-align: center;
+                    }
+                    div.whoweare-art {
+                        p {
+                            font-size: 2.5rem;
+                        }
+                    }
                 } //end of whoarewe
                 section.sponsors {
                     div.img-group {
@@ -408,72 +529,18 @@
                 } // End of Sponsors
                 section.form-content {
                     display: grid;
-                    grid-template-columns: 5vw 2fr 5vw;
-                    grid-template-areas: ". form .";
+                    grid-template-columns: 1fr;
                     justify-items: center;
-                    div.khp-form {
-                        grid-area: form;
-                        display: grid;
-                        grid-template-rows: repeat(3, $minmax-content);
-                        grid-template-areas: 'header' 'error' 'form';
-                        @include khp-grid-gap;
-                        background: $khp_green;
-                        border: 2px solid $khp_purple;
-                        border-radius: 5px;
-                        margin: 25px;
-                        header.form-heading {
-                            grid-area: header;
-                            text-align: center;
-                            h2 {
-                                font-size: 2.5rem;
-                                font-weight: bold;
-                            }
-                        }
-                        div.form-errors {
-                            grid-area: error;
-                            margin: auto;
-                            font-size: 2rem;
-                            font-weight: bold;
-                            p.error {
-                                color: red;
-                            }
-                            p.success {
-                                color: $khp_purple;
-                            }
-                        }
-                        form {
-                            grid-area: form;
-                            div.form-group {
-                                margin: 25px;
-                                label {
-                                    font-weight: 700;
-                                    font-size: 1.5rem;
-                                }
-                                label.validate {
-                                    input.validate {
-                                        width: 25px;
-                                        border-radius: 5px;
-                                        text-align: center;
-                                    }
-                                }
-                            }
-                            button.btn {
-                                background: $khp_purple;
-                                border: $khp_purple;
-                                color: $khp_purewhite;
-                                margin-bottom: 10px;
-                                width: 10rem;
-                                font-size: 1.5rem;
-                            }
-                        }
-                    }
                     div.contact {
                         width: 50vw;
                         form {
                             display: grid;
-                            grid-template-rows: repeat(5, $minmax-content);
+                            grid-template-rows: $minmax-content $minmax-content $minmax-content $minmax-content $minmax-content;
                             grid-template-columns: repeat(4, 1fr);
                             grid-gap: 25px;
+                            @include mobile {
+                                grid-template-rows: $minmax-content $minmax-content $minmax-content $minmax-content $minmax-content $minmax-content;
+                            }
                             div.form-group {
                                 margin-top: 0;
                                 margin-bottom: 0;
@@ -503,21 +570,118 @@
                             div.validate {
                                 grid-column: 1/span 2;
                                 grid-row: 5;
+                                @include mobile {
+                                    grid-column: 1/-1;
+                                    justify-self: center;
+                                }
                             }
                             div.submit {
                                 grid-column: 3/span 2;
                                 grid-row: 5;
                                 justify-self: end;
+                                @include mobile {
+                                    grid-row: 6;
+                                    grid-column: 1/-1;
+                                    justify-self: center;
+                                }
                             }
                         }
                     } // end of contact form
                     div.login {
                         width: 40vw;
                     }
+                    div.khp-form {
+                        grid-area: form;
+                        width: 50vw;
+                        display: grid;
+                        grid-template-rows: repeat(3, $minmax-content);
+                        grid-template-areas: 'header' 'error' 'form';
+                        @include khp-grid-gap;
+                        background: $khp_green;
+                        border: 2px solid $khp_purple;
+                        border-radius: 5px;
+                        margin: 25px;
+                        @include mobile {
+                            width: 85vw;
+                            margin: 0;
+                        }
+                        header.form-heading {
+                            grid-area: header;
+                            text-align: center;
+                            h2 {
+                                font-size: 2.5rem;
+                                font-weight: bold;
+                            }
+                        }
+                        div.form-errors {
+                            grid-area: error;
+                            margin: auto;
+                            font-size: 2rem;
+                            font-weight: bold;
+                            p.error {
+                                color: red;
+                            }
+                            p.success {
+                                color: $khp_purple;
+                            }
+                        }
+                        form {
+                            grid-area: form;
+                            div.form-group {
+                                margin: 5px 50px;
+                                @include mobile {
+                                    margin: 5px 15px
+                                }
+                                label {
+                                    font-weight: 700;
+                                    font-size: 1.5rem;
+                                }
+                                label.validate {
+                                    input.validate {
+                                        width: 25px;
+                                        border-radius: 5px;
+                                        text-align: center;
+                                    }
+                                }
+                            }
+                            button.btn {
+                                background: $khp_purple;
+                                border: $khp_purple;
+                                color: $khp_purewhite;
+                                margin-bottom: 10px;
+                                width: 10rem;
+                                font-size: 1.5rem;
+                            }
+                        }
+                    }
                 } //End of form_content
+                section.content-header {
+                    grid-area: header;
+                    grid-row: 1;
+                    header h1 {
+                        text-shadow: 2px 2px 4px $khp_purple;
+                        font-size: 4rem;
+                        text-align: center;
+                    }
+                    header div.div-arrow a {
+                        font-size: 2rem;
+                        color: $khp_purple;
+                    }
+                }
+                section.content {
+                    grid-area: content;
+                    grid-row: 2;
+                    @include khp-grid-gap;
+                    @include mobile {
+                        grid-template-columns: $minmax-content;
+                        grid-gap: 0;
+                        grid-row-gap: 20px;
+                    }
+                }
             } // end main-content
             footer.footer {
                 grid-row: 3;
+                grid-area: footer;
                 display: grid;
                 grid-template-rows: 1fr 1fr;
                 grid-template-columns: 1fr 1fr 1fr;
@@ -526,6 +690,11 @@
                 background: $khp_purple;
                 border-top: solid $khp_green 5px;
                 color: $khp_purewhite;
+                @include mobile {
+                    grid-template-columns: 1fr;
+                    grid-template-rows: $minmax-content $minmax-content $minmax-content $minmax-content;
+                    grid-template-areas: "social" "address" "copy" "dev";
+                }
                 &>div.info {
                     grid-row: 2;
                     align-self: end;
@@ -547,6 +716,9 @@
                     grid-auto-flow: column dense;
                     grid-gap: 20px;
                     padding: 25px;
+                    @include mobile {
+                        grid-area: social;
+                    }
                     a i.fab {
                         letter-spacing: 5px;
                         font-size: 5rem;
@@ -555,11 +727,20 @@
                 }
                 div#address {
                     grid-column: 1/2;
+                    @include mobile {
+                        grid-area: address;
+                    }
                 }
                 div#dev {
                     grid-column: 2/3;
+                    @include mobile {
+                        grid-area: dev;
+                    }
                 }
                 div#copy {
                     grid-column: 3/3;
+                    @include mobile {
+                        grid-area: copy;
+                    }
                 }
             }
