@@ -102,6 +102,10 @@
                 grid-row: 1;
                 grid-area: header;
                 display: grid;
+                position: sticky;
+                top: 0;
+                z-index: 99;
+                //width: 100vw;
                 grid-template-columns: 1fr 2fr;
                 font-family: 'Indie Flower', cursive;
                 background-color: $khp_purple;
@@ -207,6 +211,9 @@
                 grid-row: 2;
                 grid-area: content;
                 display: grid;
+                position: relative;
+                //top: 10px;
+                z-index: 1;
                 grid-template-columns: 150px 1fr 150px;
                 grid-template-rows: $minmax-content $minmax-content;
                 grid-template-areas: '. header .' '. content .';
@@ -261,6 +268,9 @@
                             background: $khp_purple;
                             border-radius: 5px;
                             a {
+                                // display: grid;
+                                // grid-column: 250px $minmax-content;
+                                // grid-auto-flow: column;
                                 display: flex;
                                 justify-content: space-around;
                                 text-decoration: none;
@@ -268,13 +278,14 @@
                                 color: $khp-green;
                                 @include mobile {
                                     flex-direction: column;
+                                    //grid-auto-flow: row;
                                 }
                                 img {
                                     display: block;
                                     border-radius: $img-border-radius;
                                     margin: 10px;
-                                    width: 15%;
-                                    height: 15%;
+                                    width: 50%;
+                                    height: auto;
                                     @include mobile {
                                         margin: 10px auto;
                                         width: 50%;
@@ -687,6 +698,8 @@
                 grid-template-columns: 1fr 1fr 1fr;
                 justify-items: center;
                 align-items: end;
+                position: static;
+                z-index: 1;
                 background: $khp_purple;
                 border-top: solid $khp_green 5px;
                 color: $khp_purewhite;
