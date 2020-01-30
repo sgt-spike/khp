@@ -19,26 +19,26 @@
          <ul id="nav-sidebar" class="nav-sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fas fa-times"></i></a>
             <li class="nav-sidebar-item" >
-               <a class="nav-sidebar-item-a" href="index.php" id="sidebar-home" onclick="setActiveLink()">Home</a>
+               <a class="nav-sidebar-item-a" href="<?php echo $khp_index ?>" id="sidebar-home" onclick="setActiveLink()">Home</a>
             </li>
             <li class="nav-sidebar-item" >
-               <a class="nav-sidebar-item-a" href="familystories.php?page=Gallery" id="sidebar-stories">Family Stories</a>
+               <a class="nav-sidebar-item-a" href="<?php echo $khp_families ?>" id="sidebar-stories">Family Stories</a>
             </li>
             <li class="nav-sidebar-item" >
-               <a class="nav-sidebar-item-a" href="events.php" id="sidebar-events">Events</a>
+               <a class="nav-sidebar-item-a" href="events.php?event=All" id="sidebar-events">Events</a>
             </li>
             <li class="nav-sidebar-item with-sub">
-               <a class="nav-sidebar-item-a" href="whoweare.php?page=Board" id="sidebar-us">Who We Are</a>
+               <a class="nav-sidebar-item-a" href="<?php echo $khp_whoweare ?>" id="sidebar-us">Who We Are</a>
             </li>
             <li class="nav-sidebar-item" >
-               <a class="nav-sidebar-item-a" href="sponsors.php"  id="sidebar-sponsors">Sponsors</a>
+               <a class="nav-sidebar-item-a" href="<?php echo $khp_sponsors ?>"  id="sidebar-sponsors">Sponsors</a>
             </li>
             <li class="nav-sidebar-item" >
-               <a class="nav-sidebar-item-a" href="donate.php"  id="sidebar-donate">Donate</a>
+               <a class="nav-sidebar-item-a" href="<?php echo $khp_donate ?>"  id="sidebar-donate">Donate</a>
             </li>
             <li class="nav-sidebar-item">
                <div id="sidebar-sub-div">
-                  <a class="nav-sidebar-item-a" href="contact.php" id="sidebar-contact">Contact</a>
+                  <a class="nav-sidebar-item-a" href="<?php echo $khp_contact ?>" id="sidebar-contact">Contact</a>
                </div>
             </li>
             <li class="nav-sidebar-item">

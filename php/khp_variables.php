@@ -5,7 +5,7 @@
    $khp_footer = 'php/footer.php';
    $khp_index = 'index.php';
    $khp_families = 'familystories.php?page=Gallery';
-   $khp_events = 'events.php';
+   $khp_events = 'events.php?event=All';
    $khp_whoweare = 'whoweare.php?page=Board';
    $khp_sponsors = 'sponsors.php';
    $khp_donate = 'donate.php';
