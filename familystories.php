@@ -61,7 +61,8 @@
                <article>" . $row['story'] . "</article>";
          } else {
             echo '<p class="error">Could not retrieve the data because: ' . mysqli_error($dbc) . '</p>';
-         } 
+         }
+         echo '<script src="js/slideshow.js"></script>';
       }
       mysqli_close($dbc);
       echo '</section>';

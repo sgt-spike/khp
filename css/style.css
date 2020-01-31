@@ -42,7 +42,7 @@ nav.mobile {
     width: 0;
     height: 100vh;
     position: fixed;
-    z-index: 1;
+    z-index: 5;
     top: 0;
     left: 0;
     background-color: #52055c;
@@ -128,7 +128,7 @@ section.header {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 99;
+  z-index: 4;
       grid-template-columns: 1fr 2fr;
   font-family: 'Indie Flower', cursive;
   background-color: #52055c;
@@ -136,6 +136,7 @@ section.header {
       -ms-flex-align: center;
           align-items: center;
   justify-items: center;
+  margin: 0;
 }
 
 @media screen and (max-width: 850px) {
@@ -149,7 +150,6 @@ section.header {
 section.header header.logo {
   -ms-grid-column: 1;
   grid-column: 1;
-  margin: 25px 0;
 }
 
 section.header header.logo button.openbtn {
@@ -160,7 +160,7 @@ section.header header.logo img {
   display: block;
   width: 75%;
   height: 75%;
-  margin: auto;
+  margin: 25px auto;
 }
 
 @media screen and (max-width: 850px) {
@@ -168,8 +168,19 @@ section.header header.logo img {
     grid-column: 1/-1;
     width: 100vw;
   }
+  section.header header.logo img {
+    display: block;
+    position: relative;
+    top: 0;
+    width: 50%;
+    height: 50%;
+    margin: 25px auto;
+  }
   section.header header.logo button.openbtn {
     display: initial;
+    position: absolute;
+    top: 5%;
+    left: 5%;
     -ms-grid-column-align: start;
         justify-self: start;
     -ms-flex-item-align: start;
@@ -246,7 +257,7 @@ section.header nav.main-nav ul.nav-ul li.nav-item a.nav-item-a:hover {
           transition-delay: 0s, 0s;
 }
 
-section.header nav.main-nav ul.nav-ul li.nav-item a.nav-item-a#contact {
+section.header nav.main-nav ul.nav-ul li.nav-item a#contact {
   border: solid 2px #20b62f;
   border-radius: 50px;
   text-align: center;
@@ -254,7 +265,7 @@ section.header nav.main-nav ul.nav-ul li.nav-item a.nav-item-a#contact {
   color: #20b62f;
 }
 
-section.header nav.main-nav ul.nav-ul li.nav-item a.nav-item-a#contact:hover {
+section.header nav.main-nav ul.nav-ul li.nav-item a#contact:hover {
   background: #20b62f;
   color: #d9d8d8;
   -webkit-transition-property: color, background-color;
@@ -267,7 +278,7 @@ section.header nav.main-nav ul.nav-ul li.nav-item a.nav-item-a#contact:hover {
           transition-delay: 0s, 0s;
 }
 
-section.header nav.main-nav ul.nav-ul li.nav-item a.nav-item-a#contact.active {
+section.header nav.main-nav ul.nav-ul li.nav-item a#contact.active {
   background: #20b62f;
   color: #d9d8d8;
   border: solid 2px #20b62f;
@@ -531,63 +542,84 @@ main.main-content section.individual div.story-article article {
 main.main-content section.events {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: (1fr)[auto];
-      grid-template-rows: repeat(auto, 1fr);
+  -ms-grid-columns: 3fr 1fr;
+      grid-template-columns: 3fr 1fr;
+      grid-template-areas: "current past";
   grid-gap: 20px;
 }
 
 @media screen and (max-width: 850px) {
   main.main-content section.events {
-    -ms-grid-columns: min-content;
-        grid-template-columns: -webkit-min-content;
-        grid-template-columns: min-content;
     -ms-grid-rows: (minmax(min-content, max-content))[auto];
         grid-template-rows: repeat(auto, minmax(-webkit-min-content, -webkit-max-content));
         grid-template-rows: repeat(auto, minmax(min-content, max-content));
     grid-gap: 0;
     grid-row-gap: 20px;
+    grid-auto-flow: row;
   }
 }
 
 main.main-content section.events div.current-event {
-  -ms-grid-column: 1;
-  grid-column: 1;
   -ms-grid-row: 1;
-  -ms-grid-row-span: 4;
-  grid-row: 1/5;
-}
-
-main.main-content section.events div.past-event {
-  -ms-grid-column: 2;
-  grid-column: 2;
-}
-
-main.main-content section.events div.past-event div {
-  -ms-grid-row: 2;
   -ms-grid-column: 1;
-  grid-area: event;
-  display: -ms-grid;
-  display: grid;
-      grid-template-columns: minmax(-webkit-min-content, -webkit-max-content) minmax(-webkit-min-content, -webkit-max-content) minmax(-webkit-min-content, -webkit-max-content) minmax(-webkit-min-content, -webkit-max-content);
-      grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content);
-  grid-auto-flow: dense;
-  background-color: rgba(32, 182, 47, 0.8);
-  border: 2px solid #52055c;
+  grid-area: current;
+  border: medium solid #52055c;
+}
+
+main.main-content section.events div.current-event div.mobile {
+  display: none;
 }
 
 @media screen and (max-width: 850px) {
-  main.main-content section.events div.past-event div {
-    -ms-grid-columns: minmax(min-content, max-content) minmax(min-content, max-content);
-        grid-template-columns: minmax(-webkit-min-content, -webkit-max-content) minmax(-webkit-min-content, -webkit-max-content);
-        grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content);
+  main.main-content section.events div.current-event {
+    -ms-grid-row: 1;
+    grid-row: 1;
+    border: 1px solid #52055c;
+  }
+  main.main-content section.events div.current-event div.mobile {
+    display: initial;
+  }
+  main.main-content section.events div.current-event div.mobile a {
+    border-radius: 10px;
+  }
+  main.main-content section.events div.current-event div.desktop {
+    display: none;
   }
 }
 
-main.main-content section.events div.past-event div img {
-  width: 15rem;
-  border: 2px solid #52055c;
+main.main-content section.events div.past-events {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: past;
+}
+
+@media screen and (max-width: 850px) {
+  main.main-content section.events div.past-events {
+    -ms-grid-row: 2;
+    grid-row: 2;
+  }
+}
+
+main.main-content section.events div.past-events div {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[auto];
+      grid-template-rows: repeat(auto, 1fr);
+  margin: 15px;
+}
+
+main.main-content section.events div.past-events div hr {
+  display: block;
+  border: 1px solid #20b62f;
+  margin: .5em auto;
+  width: 100%;
+}
+
+main.main-content section.events div.past-events div a.event-link {
+  text-decoration: none;
+  color: #20b62f;
+  text-align: left;
+  font-size: 2rem;
 }
 
 main.main-content section.events div.event {
@@ -599,6 +631,7 @@ main.main-content section.events div.event {
       grid-template-areas: 'event-header' 'event';
   grid-gap: 20px;
   justify-items: center;
+  background: #52055c;
 }
 
 @media screen and (max-width: 850px) {
@@ -612,11 +645,71 @@ main.main-content section.events div.event header {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: event-header;
+  color: #20b62f;
 }
 
 main.main-content section.events div.event header h2 {
   font-size: 3rem;
   text-align: center;
+}
+
+main.main-content section.events div.event div {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: event;
+}
+
+main.main-content section.event-photos {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(min-content, max-content);
+      grid-template-columns: minmax(-webkit-min-content, -webkit-max-content);
+      grid-template-columns: minmax(min-content, max-content);
+  -ms-grid-rows: 2;
+      grid-template-rows: 2;
+      grid-template-areas: "event-header" "event-photos";
+}
+
+main.main-content section.event-photos header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: event-header;
+  text-align: center;
+}
+
+main.main-content section.event-photos div.photos {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: event-photos;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(10vw, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(10vw, 1fr));
+  grid-auto-rows: 10vh;
+  grid-auto-flow: dense;
+  grid-gap: 10px;
+  background-color: rgba(82, 5, 92, 0.8);
+  border: 2px solid #52055c;
+}
+
+main.main-content section.event-photos div.photos div.height {
+  grid-row: span 2;
+}
+
+main.main-content section.event-photos div.photos div.width {
+  grid-column: span 2;
+}
+
+main.main-content section.event-photos div.photos div.big {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+main.main-content section.event-photos div.photos img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 main.main-content section.board {
@@ -749,16 +842,32 @@ main.main-content section.member div.whoweare-art p {
 main.main-content section.sponsors div.img-group {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content);
-      grid-template-columns: minmax(-webkit-min-content, -webkit-max-content) minmax(-webkit-min-content, -webkit-max-content) minmax(-webkit-min-content, -webkit-max-content) minmax(-webkit-min-content, -webkit-max-content) minmax(-webkit-min-content, -webkit-max-content);
-      grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content);
+  -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 200px;
+  grid-auto-flow: dense;
   grid-gap: 20px;
   justify-items: center;
 }
 
-main.main-content section.sponsors div.img-group img {
-  max-width: 20rem;
-  margin: 20px;
+main.main-content section.sponsors div.img-group div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2em;
+}
+
+main.main-content section.sponsors div.img-group div img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 main.main-content section.form-content {

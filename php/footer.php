@@ -23,7 +23,6 @@
       <script src="js/navsidebar.js"></script>
       <script src="js/admin.js"></script>
       <script src="js/links.js"></script>
-      <script src="js/slideshow.js"></script>
    </div>
 </body>
 </html>

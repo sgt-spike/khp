@@ -15,7 +15,7 @@
    $query = 'SELECT * FROM sponsors';
    $result = mysqli_query($dbc, $query);
    while ($row = mysqli_fetch_array($result)) {
-      echo "<img src=\"{$row['img']}\" alt=\"{$row['name']}\">";
+      echo "<div><img src=\"{$row['img']}\" alt=\"{$row['name']}\"></div>";
    }
    mysqli_close($dbc);
    echo '</div></section>';
